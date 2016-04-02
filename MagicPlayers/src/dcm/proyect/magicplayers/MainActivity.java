@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lanzarLogin(null);
     }
 
 
@@ -23,9 +22,12 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void lanzarLogin(View view){
-    	Intent i = new Intent(this, Login.class);
-    	startActivity(i);
+    public void startLogin(View v){
+
+        //Iniciando la actividad Visor
+        Intent intent = new Intent(this,Login.class);
+        startActivity(intent);
+
     }
-    
+
 }

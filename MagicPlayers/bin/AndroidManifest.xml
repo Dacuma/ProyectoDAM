@@ -15,7 +15,9 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="dcm.proyect.magicplayers.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,6 +25,9 @@
             </intent-filter>
         </activity>
         <activity android:name="Login" android:label="login"></activity>
+        <activity android:name="SignIn" android:label="signin"></activity>
+        <activity android:name="MenuPrincipal" android:label="menuPrincipal"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

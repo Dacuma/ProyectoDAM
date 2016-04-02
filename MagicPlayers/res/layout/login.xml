@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundlogin"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:padding="22dp" >
+    android:padding="50dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="44dp"
             android:text="@string/LOGIN"
+            android:textColor="#FFFFFF"
             android:textSize="33sp"
             android:textStyle="bold" />
 
@@ -27,12 +29,14 @@
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/username" />
+        android:text="@string/username"
+        android:textColor="#FFFFFF" />
 
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:ems="10"
         android:inputType="text" >
 
@@ -44,12 +48,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="30dp"
-        android:text="@string/password" />
+        android:text="@string/password"
+        android:textColor="#FFFFFF" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -70,16 +76,27 @@
             <Button
                 android:id="@+id/btnRegistrarse"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center|left"
-                android:text="@string/signin" />
+                android:layout_height="80dp"
+                android:layout_gravity="center|center_horizontal"
+                android:background="#FFFF66"
+                android:gravity="center|center_horizontal"
+                android:onClick="startSignIn"
+                android:padding="13dp"
+                android:text="@string/signin"
+                android:textAlignment="gravity" />
 
             <Button
                 android:id="@+id/btnIdentificarse"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="#FFFF66"
                 android:gravity="center|left"
-                android:text="@string/login" />
+                android:height="40dp"
+                android:onClick="startMenuPrincipal"
+                android:padding="13dp"
+                android:text="@string/login"
+                android:textAlignment="center" />
 
         </TableRow>
     </TableLayout>
