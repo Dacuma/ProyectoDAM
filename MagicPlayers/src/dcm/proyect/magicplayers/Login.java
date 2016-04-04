@@ -37,22 +37,25 @@ public class Login extends Activity {
     }
     
     public void startMenuPrincipal(View V) throws InterruptedException{
+    	//Obtiene el usuario y la contraseña de la ventana de login
     	EditText text = (EditText) findViewById(R.id.etUsername);
 		String usuario = text.getText().toString();
 		text = (EditText) findViewById(R.id.etPassword);
 		String passwd = text.getText().toString();
+		//Hilo que comprueba si el usuario y la contraseña son correctos
     	ThreadLogin tl = new ThreadLogin(usuario,passwd);
+    	//Elimina el texto del campo contraseña, deja el nombre de usuario
     	text.setText("");
     	
+    	//Se ejecuta el hilo ThreadLogin
     	tl.start();
     	tl.join();
+    	//isBandera devuelve true si el login es correcto, false si no.
     	if(tl.isBandera()){
     		Toast toast = Toast
 					.makeText(this, "Conectado!",
 							Toast.LENGTH_SHORT);
 			toast.show();
-			DatosUsuario.nombreU = usuario;
-			DatosUsuario.passwdU = passwd;
     		Intent i = new Intent(this, MenuPrincipal.class);
         	startActivity(i);
     	}else{

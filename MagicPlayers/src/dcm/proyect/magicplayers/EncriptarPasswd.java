@@ -7,6 +7,7 @@ public class EncriptarPasswd {
 	private static final char[] CONSTS_HEX = { '0', '1', '2', '3', '4', '5',
 			'6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
+	//Método que encripta texto con un algoritmo irreversible
 	public static String encriptar(String passwd) {
 
 		try {

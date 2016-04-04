@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//Actividad que corresponde al registro de usuarios
 public class SignUp extends Activity {
 	
 	@Override
@@ -35,6 +36,7 @@ public class SignUp extends Activity {
 	}
 
 	public void registrarUsuario(View v) throws InterruptedException {
+		//Se captan los catos introducidos en la ventana de registro.
 		EditText text = (EditText) findViewById(R.id.etNombreUsuarioSI);
 		String usuario = text.getText().toString();
 		text = (EditText) findViewById(R.id.etPasswordSI);
@@ -44,12 +46,15 @@ public class SignUp extends Activity {
 		text = (EditText) findViewById(R.id.etEmailSI);
 		String mail = text.getText().toString();
 
+		//Se comprueban los datos, si son correcto el usuario se registra.
+		//Comprueba que no haya campos vacíos
 		if (usuario.length() == 0 | passwd.length() == 0
 				| passwd2.length() == 0 | mail.length() == 0) {
 			Toast toast = Toast
 					.makeText(this, "Por favor, complete todos los campos.",
 							Toast.LENGTH_SHORT);
 			toast.show();
+		//Comprueba nombre de usuario entre 4 y 13 caracteres
 		} else if (usuario.length() < 4 | usuario.length() > 13) {
 			Toast toast = Toast
 					.makeText(
@@ -57,20 +62,24 @@ public class SignUp extends Activity {
 							"El nombre de usuario ha de tener entre 4 y 13 caracteres.",
 							Toast.LENGTH_SHORT);
 			toast.show();
+		//Comprueba contraseña entre 6 y 13 caracteres
 		} else if (passwd.length() < 6 | passwd.length() > 13) {
 			Toast toast = Toast.makeText(this,
 					"La contraseña ha de tener entre 6 y 13 caracteres.",
 					Toast.LENGTH_SHORT);
 			toast.show();
+		//Comprueba que las contraseñas coinciden en los dos campos
 		} else if (!passwd.equals(passwd2)) {
 			Toast toast = Toast.makeText(this, "Las contraseñas no coinciden.",
 					Toast.LENGTH_SHORT);
 			toast.show();
+		//Comprueba que la dirección de correo electrónico es correcta mediante una exp. regular
 		} else if (!ValidarEmail.validarEmail(mail)) {
 			Toast toast = Toast.makeText(this,
 					"La cuenta de correo electrónico introducida es incorrecta.", Toast.LENGTH_SHORT);
 			toast.show();
 		} else {
+			//Se comprueba que el nombre de usuario no existe ya en la bbdd.
 			ThreadUsuariosRepeBBDD cDB = new ThreadUsuariosRepeBBDD(usuario,
 					passwd,mail);
 			cDB.start();
@@ -79,7 +88,11 @@ public class SignUp extends Activity {
 				Toast toast = Toast.makeText(this,
 						"El nombre de Usuario ya existe.", Toast.LENGTH_SHORT);
 				toast.show();
-			} else {
+			} else if(cDB.isBanderaEmail()){
+				Toast toast = Toast.makeText(this,
+						"El correo electrónico introducido ya está asociado a una cuenta.", Toast.LENGTH_SHORT);
+				toast.show();
+			}else{
 				Toast toast = Toast
 						.makeText(
 								this,

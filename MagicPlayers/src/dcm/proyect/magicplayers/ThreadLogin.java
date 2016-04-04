@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//Hilo que comprueba si el usuario existe y la contraseña introducida es correcta.
 public class ThreadLogin extends Thread {
 	String nombre = "";
 	String passwd = "";
@@ -36,6 +37,7 @@ public class ThreadLogin extends Thread {
 			Statement stat = conn
 					.createStatement();
 			ResultSet rs = stat.executeQuery("SELECT contrasenaU from usuarios where nombreU='" +nombre+ "';");
+			//Si el usuario existe y la contraseña es correcta bandera = true.
 			while(rs.next()){
 				if(passwd.equals(rs.getString("contrasenaU"))){
 					bandera = true;

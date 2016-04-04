@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+//La actividad principal muestra una imágen y al tocarla pasa a la 
+//ventana de login
 public class MainActivity extends Activity{
 
     @Override
