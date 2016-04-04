@@ -14,11 +14,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SignIn extends Activity {
+public class SignUp extends Activity {
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.signin);
+		setContentView(R.layout.signup);
 	}
 
 	@Override
@@ -40,9 +41,11 @@ public class SignIn extends Activity {
 		String passwd = text.getText().toString();
 		text = (EditText) findViewById(R.id.etPassword2SI);
 		String passwd2 = text.getText().toString();
+		text = (EditText) findViewById(R.id.etEmailSI);
+		String mail = text.getText().toString();
 
 		if (usuario.length() == 0 | passwd.length() == 0
-				| passwd2.length() == 0) {
+				| passwd2.length() == 0 | mail.length() == 0) {
 			Toast toast = Toast
 					.makeText(this, "Por favor, complete todos los campos.",
 							Toast.LENGTH_SHORT);
@@ -63,18 +66,27 @@ public class SignIn extends Activity {
 			Toast toast = Toast.makeText(this, "Las contraseñas no coinciden.",
 					Toast.LENGTH_SHORT);
 			toast.show();
+		} else if (!ValidarEmail.validarEmail(mail)) {
+			Toast toast = Toast.makeText(this,
+					"La cuenta de correo electrónico introducida es incorrecta.", Toast.LENGTH_SHORT);
+			toast.show();
 		} else {
-			ThreadUsuariosRepeBBDD cDB = new ThreadUsuariosRepeBBDD(usuario, passwd);
+			ThreadUsuariosRepeBBDD cDB = new ThreadUsuariosRepeBBDD(usuario,
+					passwd,mail);
 			cDB.start();
 			cDB.join();
-			if(cDB.isBandera()){
-				Toast toast = Toast.makeText(this, "El nombre de Usuario ya existe.",
-						Toast.LENGTH_SHORT);
+			if (cDB.isBandera()) {
+				Toast toast = Toast.makeText(this,
+						"El nombre de Usuario ya existe.", Toast.LENGTH_SHORT);
 				toast.show();
-			}else{
-				Toast toast = Toast.makeText(this, "Ya estás registrado, logea con tu nombre de usuario y contraseña.",
-						Toast.LENGTH_SHORT);
+			} else {
+				Toast toast = Toast
+						.makeText(
+								this,
+								"¡Enhorabuena!, te has registrado con éxito. Logea con tu nombre de usuario y contraseña.",
+								Toast.LENGTH_SHORT);
 				toast.show();
+				finish();
 			}
 		}
 

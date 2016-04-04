@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundlogin"
     android:gravity="center_vertical"
-    android:orientation="vertical"
-    android:padding="50dp" >
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,6 +17,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="44dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="3"
+            android:shadowRadius="5"
             android:text="@string/LOGIN"
             android:textColor="#FFFFFF"
             android:textSize="33sp"
@@ -25,80 +28,82 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/username"
-        android:textColor="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/etUsername"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="text" >
+        android:orientation="vertical"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp" >
 
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/tvPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:text="@string/password"
-        android:textColor="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:paddingTop="30dp"
-        android:stretchColumns="*" >
-
-        <TableRow
-            android:id="@+id/tableRow1"
+        <TextView
+            android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:text="@string/username"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnRegistrarse"
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="3"
+            android:shadowRadius="5"
+            android:text="@string/password"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_gravity="center|center_horizontal"
-                android:background="#FFFF66"
-                android:gravity="center|center_horizontal"
-                android:onClick="startSignIn"
-                android:padding="13dp"
-                android:text="@string/signin"
-                android:textAlignment="gravity" />
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
-            <Button
-                android:id="@+id/btnIdentificarse"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:background="#FFFF66"
-                android:gravity="center|left"
-                android:height="40dp"
-                android:onClick="startMenuPrincipal"
-                android:padding="13dp"
-                android:text="@string/login"
-                android:textAlignment="center" />
+                <Button
+                    android:id="@+id/Button01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btnregistro"
+                    android:onClick="startSignUp" />
 
-        </TableRow>
-    </TableLayout>
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btnlogin"
+                    android:onClick="startMenuPrincipal" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
 
 </LinearLayout>

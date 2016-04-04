@@ -13,7 +13,7 @@ public class ThreadLogin extends Thread {
 
 	public ThreadLogin(String nombre, String passwd) {
 		this.nombre = nombre;
-		this.passwd = passwd;
+		this.passwd = EncriptarPasswd.encriptar(passwd);
 	}
 
 	@Override

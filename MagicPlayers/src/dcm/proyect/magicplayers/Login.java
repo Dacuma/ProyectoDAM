@@ -24,8 +24,15 @@ public class Login extends Activity {
         return true;
     }
     
-    public void startSignIn(View v){
-    	Intent i = new Intent(this, SignIn.class);
+    //Evito que se pueda volver a atrás.
+    @Override
+    public void onBackPressed() {
+        super.finish();
+    return;
+    }
+    
+    public void startSignUp(View v){
+    	Intent i = new Intent(this, SignUp.class);
     	startActivity(i);
     }
     
@@ -35,6 +42,8 @@ public class Login extends Activity {
 		text = (EditText) findViewById(R.id.etPassword);
 		String passwd = text.getText().toString();
     	ThreadLogin tl = new ThreadLogin(usuario,passwd);
+    	text.setText("");
+    	
     	tl.start();
     	tl.join();
     	if(tl.isBandera()){
@@ -42,6 +51,8 @@ public class Login extends Activity {
 					.makeText(this, "Conectado!",
 							Toast.LENGTH_SHORT);
 			toast.show();
+			DatosUsuario.nombreU = usuario;
+			DatosUsuario.passwdU = passwd;
     		Intent i = new Intent(this, MenuPrincipal.class);
         	startActivity(i);
     	}else{

@@ -9,11 +9,13 @@ import java.sql.Statement;
 public class ThreadUsuariosRepeBBDD extends Thread {
 	String nombre = "";
 	String passwd = "";
+	String email = "";
 	boolean bandera = false;
 
-	public ThreadUsuariosRepeBBDD(String nombre, String passwd) {
+	public ThreadUsuariosRepeBBDD(String nombre, String passwd, String email) {
 		this.nombre = nombre;
 		this.passwd = passwd;
+		this.email = email;
 	}
 
 	@Override
@@ -35,14 +37,14 @@ public class ThreadUsuariosRepeBBDD extends Thread {
 		try {
 			Statement stat = conn
 					.createStatement();
-			ResultSet rs = stat.executeQuery("SELECT nombreU from usuarios");
+			ResultSet rs = stat.executeQuery("SELECT nombreU from usuarios where nombreU='" +nombre+ "';");
 			while(rs.next()){
-				if(nombre.equals(rs.getString("nombreU"))){
 					bandera = true;
-				}
 			}
 			if(!bandera){
-				stat.executeUpdate("INSERT INTO `usuarios` VALUES ('" +nombre+ "', '" +passwd+ "', NULL, NULL, NULL)");
+				//Encriptamos la contraseña para aumentar la seguridad.
+				passwd = EncriptarPasswd.encriptar(passwd);
+				stat.executeUpdate("INSERT INTO `usuarios` VALUES ('" +nombre+ "', '" +passwd+ "', NULL, NULL, NULL,'" +email+ "')");
 			}
 			rs.close();
 		} catch (SQLException e) {
