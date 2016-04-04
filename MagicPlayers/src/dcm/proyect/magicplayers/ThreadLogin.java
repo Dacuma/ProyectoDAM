@@ -36,7 +36,7 @@ public class ThreadLogin extends Thread {
 		try {
 			Statement stat = conn
 					.createStatement();
-			ResultSet rs = stat.executeQuery("SELECT contrasenaU from usuarios where nombreU='" +nombre+ "';");
+			ResultSet rs = stat.executeQuery("SELECT contrasenaU from Usuario where nombreU='" +nombre+ "';");
 			//Si el usuario existe y la contraseña es correcta bandera = true.
 			while(rs.next()){
 				if(passwd.equals(rs.getString("contrasenaU"))){

@@ -3,11 +3,68 @@
 
     <string name="app_name">Magic Players</string>
     <string name="action_settings">Configuración</string>
-    
     <string name="username">Nombre de usuario:</string>
     <string name="password">Contraseña:</string>
     <string name="login">Identificarse</string>
     <string name="signin">Registrarse</string>
     <string name="LOGIN">LOGIN</string>
+
+    <string-array name="paises">
+        <item>España</item>
+    </string-array>
+    <string-array name="provincias">
+        <item>A Coruna</item>
+        <item>Alava</item>
+        <item>Albacete</item>
+        <item>Alicante</item>
+        <item>Almeria</item>
+        <item>Asturias</item>
+        <item>Avila</item>
+        <item>Badajoz</item>
+        <item>Baleares</item>
+        <item>Barcelona</item>
+        <item>Burgos</item>
+        <item>Caceres</item>
+        <item>Cadiz</item>
+        <item>Cantabria</item>
+        <item>Castellon</item>
+        <item>Ceuta</item>
+        <item>Ciudad Real</item>
+        <item>Cordoba</item>
+        <item>Cuenca</item>
+        <item>Girona</item>
+        <item>Granada</item>
+        <item>Guadalajara</item>
+        <item>Guipuzcoa</item>
+        <item>Huelva</item>
+        <item>Huesca</item>
+        <item>Jaen</item>
+        <item>La Rioja</item>
+        <item>Las Palmas</item>
+        <item>Leon</item>
+        <item>Lleida</item>
+        <item>Lugo</item>
+        <item>Madrid</item>
+        <item>Malaga</item>
+        <item>Melilla</item>
+        <item>Murcia</item>
+        <item>Navarra</item>
+        <item>Ourense</item>
+        <item>Palencia</item>
+        <item>Pontevedra</item>
+        <item>Salamanca</item>
+        <item>Segovia</item>
+        <item>Sevilla</item>
+        <item>Soria</item>
+        <item>Tarragona</item>
+        <item>Tenerife</item>
+        <item>Teruel</item>
+        <item>Toledo</item>
+        <item>Valencia</item>
+        <item>Valladolid</item>
+        <item>Vizcaya</item>
+        <item>Zamora</item>
+        <item>Zaragoza </item>
+    </string-array>
 
 </resources>
