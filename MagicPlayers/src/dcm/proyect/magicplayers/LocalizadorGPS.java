@@ -102,7 +102,6 @@ public class LocalizadorGPS implements LocationListener {
 		// 1 grado = 111,319km, por lo que obtenemos los kilómetros con:
 		distancia = Math.round(distancia * 111.319);
 		return distancia;
-		
 	}
 
 	// Hilo que actualizará las coordenadas en la bbdd.
