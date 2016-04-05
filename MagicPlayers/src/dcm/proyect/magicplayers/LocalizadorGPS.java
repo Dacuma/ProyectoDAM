@@ -17,65 +17,94 @@ import android.widget.Toast;
 //NOTA: HAY QUE AGREGAR PERMISOS EN EL ANDROID MANIFEST.
 public class LocalizadorGPS implements LocationListener {
 	private Context context;
-	//Manejador de la localización
+	// Manejador de la localización
 	LocationManager locationManager;
-	//Proveedor de la localización
+	// Proveedor de la localización
 	String proveedor;
-	//Boolean que determina si el proveedor esta activo
+	// Boolean que determina si el proveedor esta activo
 	private boolean redOn;
 	String latitud = "";
 	String longitud = "";
 
 	public LocalizadorGPS(Context contex) {
 		this.context = contex;
-		locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+		locationManager = (LocationManager) context
+				.getSystemService(Context.LOCATION_SERVICE);
 		proveedor = LocationManager.NETWORK_PROVIDER;
 		redOn = locationManager.isProviderEnabled(proveedor);
-		locationManager.requestLocationUpdates(proveedor,1000,1,this);
+		locationManager.requestLocationUpdates(proveedor, 1000, 1, this);
 		getLocalizacion();
 	}
-	
-	//Método con el que obtengo la localización.
-	private void getLocalizacion(){
-		if(redOn){
+
+	// Método con el que obtengo la localización.
+	private void getLocalizacion() {
+		if (redOn) {
 			Location lc = locationManager.getLastKnownLocation(proveedor);
-			if(lc != null){
+			if (lc != null) {
 				StringBuilder builder = new StringBuilder();
 				builder.append(lc.getLatitude());
 				latitud = builder.toString();
 				builder.setLength(0);
 				builder.append(lc.getLongitude());
 				longitud = builder.toString();
-				ThreadLocalizacion tl = new ThreadLocalizacion(latitud,longitud);
+				ThreadLocalizacion tl = new ThreadLocalizacion(latitud,
+						longitud);
 				tl.start();
 			}
 		}
 	}
 
-	//Este método se activa cada vez que cambia la localización.
+	// Este método se activa cada vez que cambia la localización.
 	@Override
 	public void onLocationChanged(Location loc) {
 	}
 
-	//Si el proveedor se desactiva...
+	// Si el proveedor se desactiva...
 	@Override
 	public void onProviderDisabled(String provider) {
 
 	}
 
-	//Si el proveedor se activa...
+	// Si el proveedor se activa...
 	@Override
 	public void onProviderEnabled(String provider) {
 
 	}
 
-	
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
 
 	}
-	
-	//Hilo que actualizará las coordenadas en la bbdd.
+
+	// Método que calcula distancia entre dos coordenadas GPS, devuelve un
+	// double. Para calcularla se usa el teorema de pitágoras, que aunque no es
+	// muy preciso debido a que la tierra es redonda, nos sirve para lo que nos
+	// proponemos.
+	public double calcularDistancia(String lat1, String long1, String lat2,
+			String long2) {
+		double distancia = 0;
+		double latitud1 = 0;
+		double longitud1 = 0;
+		double latitud2 = 0;
+		double longitud2 = 0;
+		try {
+			latitud1 = Double.parseDouble(lat1);
+			longitud1 = Double.parseDouble(long1);
+			latitud2 = Double.parseDouble(lat2);
+			longitud2 = Double.parseDouble(long2);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		distancia = Math.sqrt((Math.pow((latitud1 - latitud2), 2) + Math.pow(
+				(longitud1 - longitud2), 2)));
+		// Distancia en grados de latitud y longitud.
+		distancia = Math.abs(distancia);
+		// 1 grado = 111,319km, por lo que obtenemos los kilómetros con:
+		distancia = Math.round(distancia * 111.319);
+		return distancia;
+	}
+
+	// Hilo que actualizará las coordenadas en la bbdd.
 	public class ThreadLocalizacion extends Thread {
 		String latitud = "";
 		String longitud = "";
@@ -95,26 +124,27 @@ public class LocalizadorGPS implements LocationListener {
 						"jdbc:mysql://db4free.net:3306/magicplayers",
 						"dcuellar", "QAZwsx123");
 			} catch (SQLException se) {
-				
+
 			} catch (ClassNotFoundException e) {
-				
+
 			} catch (Exception e) {
 
 			}
 
 			try {
-				Statement stat = conn
-						.createStatement();
-				stat.executeUpdate("UPDATE Usuario SET latitud = '"+latitud+"', longitud = '"+longitud+"' WHERE nombreU = '"+Login.nombreUsuario+"';");
+				Statement stat = conn.createStatement();
+				stat.executeUpdate("UPDATE Usuario SET latitud = '" + latitud
+						+ "', longitud = '" + longitud + "' WHERE nombreU = '"
+						+ Login.nombreUsuario + "';");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				
+
 			}
-		
+
 		}
 	}
 }
