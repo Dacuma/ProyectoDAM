@@ -21,8 +21,9 @@
             android:id="@+id/etNombreUsuarioSI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
             android:ems="10"
+            android:hint="Nombre de Usuario"
+            android:inputType="text"
             android:maxLength="14"
             android:maxLines="1"
             android:width="250dp" >
@@ -41,6 +42,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Contraseña"
             android:inputType="textPassword"
             android:maxLength="16"
             android:maxLines="1" />
@@ -62,6 +64,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Repite Contraseña"
             android:inputType="textPassword"
             android:maxLength="16"
             android:maxLines="1" />
@@ -77,6 +80,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Email"
             android:inputType="textEmailAddress"
             android:maxLines="1" />
 
@@ -115,6 +119,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Código Postal"
             android:inputType="number"
             android:maxLines="1" />
 
@@ -129,6 +134,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Numero DCI"
             android:inputType="number"
             android:maxLines="1" />
 

@@ -13,6 +13,9 @@ public class MenuPrincipal extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menuprincipal);
+        //Cada vez que se accede por primera vez a la aplicación se guardan las coordenadas en la
+        //base de datos.
+        LocalizadorGPS loc = new LocalizadorGPS(this);
     }
 
 
