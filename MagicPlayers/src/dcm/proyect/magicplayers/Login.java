@@ -62,7 +62,7 @@ public class Login extends Activity {
     		Toast toast = Toast
 					.makeText(this, "Error en nombre de usuario o contraseña.",
 							Toast.LENGTH_SHORT);
-			toast.show();
+			toast.show(); 
     	}
     }
 
