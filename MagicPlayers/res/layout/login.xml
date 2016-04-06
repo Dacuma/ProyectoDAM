@@ -53,7 +53,8 @@
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="Cooltreme" />
 
         <TextView
             android:id="@+id/tvPassword"
@@ -74,7 +75,8 @@
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="123456" />
 
         <TableLayout
             android:layout_width="match_parent"
