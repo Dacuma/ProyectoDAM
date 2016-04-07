@@ -16,6 +16,7 @@ import android.widget.Toast;
 //Clase que obtiene las coordenadas de ubicación del dispositivo.
 //NOTA: HAY QUE AGREGAR PERMISOS EN EL ANDROID MANIFEST.
 public class LocalizadorGPS implements LocationListener {
+	static final double metrosXGrado = 111.319;
 	private Context context;
 	// Manejador de la localización
 	LocationManager locationManager;
@@ -100,7 +101,7 @@ public class LocalizadorGPS implements LocationListener {
 		// Distancia en grados de latitud y longitud.
 		distancia = Math.abs(distancia);
 		// 1 grado = 111,319km, por lo que obtenemos los kilómetros con:
-		distancia = Math.round(distancia * 111.319);
+		distancia = Math.round(distancia * metrosXGrado);
 		return distancia;
 	}
 

@@ -46,6 +46,7 @@
             android:label="Menu"
             android:screenOrientation="portrait" >
         </activity>
+        <activity android:name="JugadoresCercanos" android:label="Jugadores Cerca de Ti!"></activity>
     </application>
 
 </manifest>

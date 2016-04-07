@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 
 //To-Do
 public class MenuPrincipal extends Activity {
@@ -27,4 +26,8 @@ public class MenuPrincipal extends Activity {
 		return true;
 	}
 
+	public void lanzarJugadoresCercanos(View v){
+		Intent i = new Intent(this, JugadoresCercanos.class);
+		startActivity(i);
+	}
 }

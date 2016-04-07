@@ -31,7 +31,8 @@
                     android:layout_height="100dp"
                     android:layout_marginRight="30dp"
                     android:background="@drawable/btnjugadorescercanos"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:onClick="lanzarJugadoresCercanos" />
 
                 <Button
                     android:id="@+id/button2"
@@ -49,7 +50,7 @@
                 android:gravity="center" >
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/textView_derecha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
