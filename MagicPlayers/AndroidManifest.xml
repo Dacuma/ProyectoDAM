@@ -47,6 +47,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity android:name="JugadoresCercanos" android:label="Jugadores Cerca de Ti!"></activity>
+        <activity android:label="Datos del Usuario" android:name="VistaUsuario"></activity>
     </application>
 
 </manifest>

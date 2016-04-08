@@ -53,6 +53,16 @@ public final class R {
         public static final int jugadorescercanos_press=0x7f020019;
         public static final int mensajes=0x7f02001a;
         public static final int mensajes_press=0x7f02001b;
+        public static final int perfilajani=0x7f02001c;
+        public static final int perfilchandra=0x7f02001d;
+        public static final int perfilelspeth=0x7f02001e;
+        public static final int perfilgarruk=0x7f02001f;
+        public static final int perfiljace=0x7f020020;
+        public static final int perfilkiora=0x7f020021;
+        public static final int perfilliliana=0x7f020022;
+        public static final int perfilnissa=0x7f020023;
+        public static final int perfilsarkhan=0x7f020024;
+        public static final int perfiltezzeret=0x7f020025;
     }
     public static final class id {
         public static final int Button01=0x7f090006;
@@ -60,7 +70,8 @@ public final class R {
         public static final int Button3=0x7f09000f;
         public static final int Button5=0x7f090015;
         public static final int LinearLayout1=0x7f09001b;
-        public static final int action_settings=0x7f090030;
+        public static final int ScrollView1=0x7f090030;
+        public static final int action_settings=0x7f090033;
         public static final int btnEnviarSI=0x7f09002f;
         public static final int button1=0x7f090007;
         public static final int button2=0x7f09000a;
@@ -74,6 +85,7 @@ public final class R {
         public static final int etPassword2SI=0x7f090024;
         public static final int etPasswordSI=0x7f090022;
         public static final int etUsername=0x7f090002;
+        public static final int imageView1=0x7f090032;
         public static final int imageView_imagen=0x7f09001c;
         public static final int lvUsers=0x7f09001a;
         public static final int scrollView1=0x7f090008;
@@ -85,6 +97,7 @@ public final class R {
         public static final int tableRow4=0x7f090011;
         public static final int tableRow5=0x7f090014;
         public static final int tableRow6=0x7f090017;
+        public static final int textView1=0x7f090031;
         public static final int textView2=0x7f09000d;
         public static final int textView3=0x7f090012;
         public static final int textView4=0x7f090013;
@@ -112,6 +125,7 @@ public final class R {
         public static final int mostrarusuarios=0x7f030003;
         public static final int mostrarusuariosentrada=0x7f030004;
         public static final int signup=0x7f030005;
+        public static final int vistausuario=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f080000;

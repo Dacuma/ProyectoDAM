@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -70,14 +71,12 @@ public class JugadoresCercanos extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> pariente, View view,
 					int posicion, long id) {
+				Intent i = new Intent(JugadoresCercanos.this,VistaUsuario.class);
 				UsuarioEntrada elegido = (UsuarioEntrada) pariente
 						.getItemAtPosition(posicion);
-
-				CharSequence texto = "Seleccionado: "
-						+ elegido.get_textoDebajo();
-				Toast toast = Toast.makeText(JugadoresCercanos.this, texto,
-						Toast.LENGTH_LONG);
-				toast.show();
+				String nombreU = elegido.get_textoEncima();
+				i.putExtra("nombreU", nombreU);
+				startActivity(i);
 			}
 		});
 	}
@@ -137,7 +136,7 @@ public class JugadoresCercanos extends Activity {
 								+ latitud
 								+ "), 2 ) + POW((Usuario.longitud-"
 								+ longitud
-								+ "), 2 )) as distancia from Usuario where nombreU!='"
+								+ "), 2 )) as distancia, imgPerfil from Usuario where nombreU!='"
 								+ nombre
 								+ "' and latitud is not null and longitud is not null order by SQRT(POW((Usuario.latitud-"
 								+ latitud
@@ -149,18 +148,54 @@ public class JugadoresCercanos extends Activity {
 					String nombre = rs.getString("nombreU");
 					String provincia = rs.getString("provincia");
 					String distancia = rs.getString("distancia");
+					int imgPerfil = rs.getInt("imgPerfil");
 					Double dist = Double.parseDouble(distancia)
 							* LocalizadorGPS.metrosXGrado;
 					//Si la distancia es menor que 1 o mayor de 500km se trata.
 					if (dist < 1) {
-						distancia = "0 Km";
+						distancia = "<1 Km";
 					} else if(dist > 500){
 						distancia = ">500Km";
 					}else{
 						distancia = dist.intValue() + " Km";
 					}
+					//Elegimos imagen de perfil
+					switch(imgPerfil){
+					case 0:
+						imgPerfil = R.drawable.perfilajani;
+						break;
+					case 1:
+						imgPerfil = R.drawable.perfilchandra;
+						break;
+					case 2:
+						imgPerfil = R.drawable.perfilelspeth;
+						break;
+					case 3:
+						imgPerfil = R.drawable.perfilgarruk;
+						break;
+					case 4:
+						imgPerfil = R.drawable.perfiljace;
+						break;
+					case 5:
+						imgPerfil = R.drawable.perfilkiora;
+						break;
+					case 6:
+						imgPerfil = R.drawable.perfilliliana;
+						break;
+					case 7:
+						imgPerfil = R.drawable.perfilnissa;
+						break;
+					case 8:
+						imgPerfil = R.drawable.perfilsarkhan;
+						break;
+					case 9:
+						imgPerfil = R.drawable.perfiltezzeret;
+						break;
+					default:
+						imgPerfil = R.drawable.perfiljace;
+					}
 					UsuarioEntrada du = new UsuarioEntrada(
-							R.drawable.jugadorescercanos, nombre, provincia,
+							imgPerfil, nombre, provincia,
 							distancia);
 					usuarios.add(du);
 				}
