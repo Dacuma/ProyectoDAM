@@ -30,4 +30,9 @@ public class MenuPrincipal extends Activity {
 		Intent i = new Intent(this, JugadoresCercanos.class);
 		startActivity(i);
 	}
+	
+	public void lanzarConfigurarPefil(View v){
+		Intent i = new Intent(this, ConfigurarPerfil.class);
+		startActivity(i);
+	}
 }

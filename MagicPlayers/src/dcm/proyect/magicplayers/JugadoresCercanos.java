@@ -71,11 +71,14 @@ public class JugadoresCercanos extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> pariente, View view,
 					int posicion, long id) {
-				Intent i = new Intent(JugadoresCercanos.this,VistaUsuario.class);
+				Intent i = new Intent(JugadoresCercanos.this,
+						VistaUsuario.class);
 				UsuarioEntrada elegido = (UsuarioEntrada) pariente
 						.getItemAtPosition(posicion);
 				String nombreU = elegido.get_textoEncima();
+				String distanciaU = elegido.get_textoDerecha();
 				i.putExtra("nombreU", nombreU);
+				i.putExtra("distanciaU",distanciaU);
 				startActivity(i);
 			}
 		});
@@ -93,7 +96,7 @@ public class JugadoresCercanos extends Activity {
 
 		String nombre = "";
 		ArrayList<UsuarioEntrada> usuarios = new ArrayList<UsuarioEntrada>();
-		//Variable que controla el número de usuarios mostrados
+		// Variable que controla el número de usuarios mostrados
 		int numeroResultados = 20;
 
 		// Se le pasa el nombre del usuario logeado
@@ -120,7 +123,7 @@ public class JugadoresCercanos extends Activity {
 			}
 
 			try {
-				//Se obtienen las coordenadas del usuario
+				// Se obtienen las coordenadas del usuario
 				Statement stat = conn.createStatement();
 				ResultSet rs = stat
 						.executeQuery("SELECT latitud,longitud from Usuario where nombreU='"
@@ -130,7 +133,7 @@ public class JugadoresCercanos extends Activity {
 					longitud = rs.getString("longitud");
 				}
 
-				//Se buscan los jugadores ordenados por proximidad
+				// Se buscan los jugadores ordenados por proximidad
 				rs = stat
 						.executeQuery("Select nombreU, provincia, SQRT(POW((Usuario.latitud-"
 								+ latitud
@@ -141,9 +144,11 @@ public class JugadoresCercanos extends Activity {
 								+ "' and latitud is not null and longitud is not null order by SQRT(POW((Usuario.latitud-"
 								+ latitud
 								+ "), 2 ) + POW((Usuario.longitud-"
-								+ longitud + "), 2 )) limit "+numeroResultados+";");
+								+ longitud
+								+ "), 2 )) limit "
+								+ numeroResultados + ";");
 
-				//Se obtienen los datos
+				// Se obtienen los datos
 				while (rs.next()) {
 					String nombre = rs.getString("nombreU");
 					String provincia = rs.getString("provincia");
@@ -151,16 +156,16 @@ public class JugadoresCercanos extends Activity {
 					int imgPerfil = rs.getInt("imgPerfil");
 					Double dist = Double.parseDouble(distancia)
 							* LocalizadorGPS.metrosXGrado;
-					//Si la distancia es menor que 1 o mayor de 500km se trata.
+					// Si la distancia es menor que 1 o mayor de 500km se trata.
 					if (dist < 1) {
 						distancia = "<1 Km";
-					} else if(dist > 500){
+					} else if (dist > 500) {
 						distancia = ">500Km";
-					}else{
+					} else {
 						distancia = dist.intValue() + " Km";
 					}
-					//Elegimos imagen de perfil
-					switch(imgPerfil){
+					// Elegimos imagen de perfil
+					switch (imgPerfil) {
 					case 0:
 						imgPerfil = R.drawable.perfilajani;
 						break;
@@ -194,9 +199,8 @@ public class JugadoresCercanos extends Activity {
 					default:
 						imgPerfil = R.drawable.perfiljace;
 					}
-					UsuarioEntrada du = new UsuarioEntrada(
-							imgPerfil, nombre, provincia,
-							distancia);
+					UsuarioEntrada du = new UsuarioEntrada(imgPerfil, nombre,
+							provincia, distancia);
 					usuarios.add(du);
 				}
 				rs.close();

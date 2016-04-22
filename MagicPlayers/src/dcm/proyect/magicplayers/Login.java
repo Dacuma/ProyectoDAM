@@ -7,7 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -28,8 +31,10 @@ public class Login extends Activity {
 
 	@Override
 	protected void onResume() {
-		//Si el usuario ya ha insertado datos correctos estos se quedan guardados y se 
-		//autorrellenan los campos hasta que se cierre la aplicacion o se haga un logout.
+		// Si el usuario ya ha insertado datos correctos estos se quedan
+		// guardados y se
+		// autorrellenan los campos hasta que se cierre la aplicacion o se haga
+		// un logout.
 		super.onResume();
 		textUsername = (EditText) findViewById(R.id.etUsername);
 		textPassword = (EditText) findViewById(R.id.etPassword);
@@ -54,40 +59,62 @@ public class Login extends Activity {
 	}
 
 	public void startSignUp(View v) {
-		Intent i = new Intent(this, SignUp.class);
-		startActivity(i);
+		if (!isOnline()) {
+			String aviso = "No hay conexión a internet. Compruebe sus conexiones.";
+			Toast.makeText(this, aviso, Toast.LENGTH_LONG).show();
+		} else {
+			Intent i = new Intent(this, SignUp.class);
+			startActivity(i);
+		}
+	}
+	
+	// Método que comprueba si hay conexión a internet
+	public boolean isOnline() {
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo netInfo = cm.getActiveNetworkInfo();
+		if (netInfo != null && netInfo.isConnected()) {
+			return true;
+		}
+		return false;
 	}
 
 	public void startMenuPrincipal(View V) throws InterruptedException {
-		// Obtiene el usuario y la contraseña de la ventana de login
-		nombreUsuario = textUsername.getText().toString();
-		contrasenaUsuario = textPassword.getText().toString();
-		// Hilo que comprueba si el usuario y la contraseña son correctos
-		ThreadLogin tl = new ThreadLogin(nombreUsuario, contrasenaUsuario);
-		// Elimina el texto del campo contraseña, deja el nombre de usuario
-		textPassword.setText("");
-
-		// Se ejecuta el hilo ThreadLogin
-		tl.start();
-		tl.join();
-		// isBandera devuelve true si el login es correcto, false si no.
-		if (tl.isBandera()) {
-			Toast toast = Toast
-					.makeText(this, "Conectado!", Toast.LENGTH_SHORT);
-			toast.show();
-			Intent i = new Intent(this, MenuPrincipal.class);
-			startActivity(i);
+		// Si no hay conexión avisa al usuario de que no puede proseguir.
+		if (!isOnline()) {
+			String aviso = "No hay conexión a internet. Compruebe sus conexiones.";
+			Toast.makeText(this, aviso, Toast.LENGTH_LONG).show();
 		} else {
-			Toast toast = Toast.makeText(this,
-					"Error en nombre de usuario o contraseña.",
-					Toast.LENGTH_SHORT);
-			toast.show();
-			nombreUsuario = "";
-			contrasenaUsuario = "";
+			// Obtiene el usuario y la contraseña de la ventana de login
+			nombreUsuario = textUsername.getText().toString();
+			contrasenaUsuario = textPassword.getText().toString();
+			// Hilo que comprueba si el usuario y la contraseña son correctos
+			ThreadLogin tl = new ThreadLogin(nombreUsuario, contrasenaUsuario);
+			// Elimina el texto del campo contraseña, deja el nombre de usuario
+			textPassword.setText("");
+
+			// Se ejecuta el hilo ThreadLogin
+			tl.start();
+			tl.join();
+			// isBandera devuelve true si el login es correcto, false si no.
+			if (tl.isBandera()) {
+				Toast toast = Toast.makeText(this, "Conectado!",
+						Toast.LENGTH_SHORT);
+				toast.show();
+				Intent i = new Intent(this, MenuPrincipal.class);
+				startActivity(i);
+			} else {
+				Toast toast = Toast.makeText(this,
+						"Error en nombre de usuario o contraseña.",
+						Toast.LENGTH_SHORT);
+				toast.show();
+				nombreUsuario = "";
+				contrasenaUsuario = "";
+			}
 		}
 	}
 
-	//Hilo que comprueba si el usuario existe y la contraseña introducida es correcta.
+	// Hilo que comprueba si el usuario existe y la contraseña introducida es
+	// correcta.
 	public class ThreadLogin extends Thread {
 		String nombre = "";
 		String passwd = "";
@@ -107,33 +134,35 @@ public class Login extends Activity {
 						"jdbc:mysql://db4free.net:3306/magicplayers",
 						"dcuellar", "QAZwsx123");
 			} catch (SQLException se) {
-				
+
 			} catch (ClassNotFoundException e) {
-				
+
 			} catch (Exception e) {
 
 			}
 
 			try {
-				Statement stat = conn
-						.createStatement();
-				ResultSet rs = stat.executeQuery("SELECT contrasenaU from Usuario where nombreU='" +nombre+ "';");
-				//Si el usuario existe y la contraseña es correcta bandera = true.
-				while(rs.next()){
-					if(passwd.equals(rs.getString("contrasenaU"))){
+				Statement stat = conn.createStatement();
+				ResultSet rs = stat
+						.executeQuery("SELECT contrasenaU from Usuario where nombreU='"
+								+ nombre + "';");
+				// Si el usuario existe y la contraseña es correcta bandera =
+				// true.
+				while (rs.next()) {
+					if (passwd.equals(rs.getString("contrasenaU"))) {
 						bandera = true;
 					}
 				}
 				rs.close();
 			} catch (SQLException e) {
-				
+
 			}
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				
+
 			}
-		
+
 		}
 
 		public String getNombre() {

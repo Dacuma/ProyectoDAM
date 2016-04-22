@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 //Actividad que corresponde al registro de usuarios
 public class SignUp extends Activity {
+	Login login = new Login();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +110,8 @@ public class SignUp extends Activity {
 					Toast.LENGTH_SHORT);
 			toast.show();
 		} else {
-			// Se comprueba que el nombre de usuario no existe ya en la bbdd.
+			// Se comprueba que el nombre de usuario no existe ya en la
+			// bbdd.
 			ThreadUsuariosRepeBBDD cDB = new ThreadUsuariosRepeBBDD(usuario,
 					passwd, mail, pais, provincia, cP, dci);
 			cDB.start();
@@ -135,7 +137,6 @@ public class SignUp extends Activity {
 				finish();
 			}
 		}
-
 	}
 
 	// Hilo que comprueba que el nombre de usuario no existe en la bbdd ya.
@@ -195,8 +196,8 @@ public class SignUp extends Activity {
 				while (rs.next()) {
 					banderaEmail = true;
 				}
-				//Seleccionamos una imágen al azar.
-				Random generator = new Random(); 
+				// Seleccionamos una imágen al azar.
+				Random generator = new Random();
 				int imagenPerfil = generator.nextInt(10);
 				// Si no existen ni el nombre ni el correo, registra al usuario
 				// en la base de datos.
@@ -206,8 +207,8 @@ public class SignUp extends Activity {
 					stat.executeUpdate("INSERT INTO Usuario VALUES ('" + nombre
 							+ "','" + passwd + "', NULL,'" + dci + "','" + pais
 							+ "','" + provincia + "','" + cp
-							+ "', NULL, NULL, NULL, 1, NULL,'" + email
-							+ "',"+imagenPerfil+")");
+							+ "', NULL, NULL, NULL, 1, NULL,'" + email + "',"
+							+ imagenPerfil + ")");
 				}
 				rs.close();
 			} catch (SQLException e) {

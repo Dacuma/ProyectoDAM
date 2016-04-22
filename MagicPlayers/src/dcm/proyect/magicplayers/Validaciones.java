@@ -3,6 +3,10 @@ package dcm.proyect.magicplayers;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 
 
 public class Validaciones {
@@ -28,5 +32,6 @@ public class Validaciones {
 		Matcher matcher = pattern.matcher(dci);
 		return matcher.matches();
 	}
+	
 
 }

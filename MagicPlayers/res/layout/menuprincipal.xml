@@ -140,7 +140,9 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="30dp"
-                    android:background="@drawable/btnconfperfil" />
+                    android:background="@drawable/btnconfperfil"
+                    android:onClick="lanzarConfigurarPefil" />
+
             </TableRow>
 
             <TableRow

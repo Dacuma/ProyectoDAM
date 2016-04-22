@@ -25,6 +25,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:background="#343434"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -50,33 +51,54 @@
                 android:layout_height="wrap_content"
                 android:text="Provincia"
                 android:textColor="#FFFFFF" />
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
-            android:orientation="vertical"
-            android:padding="33dp"
-            android:paddingBottom="40dp"
-            android:paddingRight="33dp" >
+            android:gravity="center_vertical"
+            android:paddingBottom="33dp"
+            android:paddingTop="33dp" >
 
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="66dp"
-                android:layout_height="63dp"
-                android:src="@drawable/btnmensajes" />
+            <TextView
+                android:id="@+id/tvDistanciaMP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="43dp"
+                android:text="PRUEBA"
+                android:textColor="#FFFFFF"
+                android:textSize="23sp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="66dp"
+                    android:layout_height="63dp"
+                    android:layout_marginRight="33dp"
+                    android:src="@drawable/btnmensajes" />
+            </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Formatos Jugados:"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp" />
+            android:background="#343434"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Formatos Jugados:"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView5"

@@ -21,6 +21,7 @@ public class VistaUsuario extends Activity{
 		setContentView(R.layout.vistausuario);
 		Bundle bundle = getIntent().getExtras();
 		String nombreU = bundle.getString("nombreU");
+		String distanciaU = bundle.getString("distanciaU");
 		TextView tv = (TextView) findViewById(R.id.textView1);
 		tv.setText(nombreU);
 		ThreadVistaUsuario tvu = new ThreadVistaUsuario(nombreU);
@@ -36,6 +37,8 @@ public class VistaUsuario extends Activity{
 		tv.setText(tvu.getDatos().get(1));
 		tv = (TextView) findViewById(R.id.textView3);
 		tv.setText(tvu.getDatos().get(2));
+		tv = (TextView) findViewById(R.id.tvDistanciaMP);
+		tv.setText(distanciaU);
 		//To-Do
 		tv = (TextView) findViewById(R.id.textView5);
 		tv.setText("No definido");

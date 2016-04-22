@@ -12,7 +12,7 @@ import android.view.View;
 public class MainActivity extends Activity{
 	
 	 // Duración en milisegundos que se mostrará el splash
-    private final int DURACION_SPLASH = 2100; // 3 segundos
+    private final int DURACION_SPLASH = 2000; // 2 segundos
 
 
     @Override
@@ -24,7 +24,7 @@ public class MainActivity extends Activity{
    
           new Handler().postDelayed(new Runnable(){
               public void run(){
-  		// Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+  		// Cuando pasen los 2 segundos, pasamos a la actividad principal de la aplicación
           	Intent intent = new Intent(MainActivity.this, Login.class);
           	startActivity(intent);
           	finish();
