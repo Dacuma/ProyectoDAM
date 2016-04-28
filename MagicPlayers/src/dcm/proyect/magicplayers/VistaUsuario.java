@@ -22,7 +22,7 @@ public class VistaUsuario extends Activity{
 		Bundle bundle = getIntent().getExtras();
 		String nombreU = bundle.getString("nombreU");
 		String distanciaU = bundle.getString("distanciaU");
-		TextView tv = (TextView) findViewById(R.id.textView1);
+		TextView tv = (TextView) findViewById(R.id.tvFormatosJugados);
 		tv.setText(nombreU);
 		ThreadVistaUsuario tvu = new ThreadVistaUsuario(nombreU);
 		tvu.start();

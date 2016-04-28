@@ -28,7 +28,7 @@ public class MainActivity extends Activity{
           	Intent intent = new Intent(MainActivity.this, Login.class);
           	startActivity(intent);
           	finish();
-              };
+              }; 
           }, DURACION_SPLASH);
       }
     

@@ -53,10 +53,10 @@ public class SignUp extends Activity {
 		mail = text.getText().toString();
 		Spinner spinner = (Spinner) findViewById(R.id.spnPais);
 		String pais = "";
-		pais = spinner.getSelectedItem().toString();
+		pais = String.valueOf(spinner.getSelectedItemPosition());
 		spinner = (Spinner) findViewById(R.id.spnProvincia);
 		String provincia = "";
-		provincia = spinner.getSelectedItem().toString();
+		provincia = String.valueOf(spinner.getSelectedItemPosition());
 		text = (EditText) findViewById(R.id.etCP);
 		String cP = "";
 		cP = text.getText().toString();

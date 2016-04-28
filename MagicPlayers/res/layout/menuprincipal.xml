@@ -35,7 +35,7 @@
                     android:onClick="lanzarJugadoresCercanos" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnCambiarAvatar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="30dp"
