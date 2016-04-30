@@ -131,8 +131,8 @@ public class Login extends Activity {
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(
-						"jdbc:mysql://db4free.net:3306/magicplayers",
-						"dcuellar", "QAZwsx123");
+						ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
 			} catch (SQLException se) {
 
 			} catch (ClassNotFoundException e) {

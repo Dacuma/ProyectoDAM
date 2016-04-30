@@ -50,6 +50,7 @@
         <activity android:name="JugadoresCercanos" android:label="Jugadores Cerca de Ti!" android:screenOrientation="portrait"></activity>
         <activity android:label="Datos del Usuario" android:name="VistaUsuario" android:screenOrientation="portrait"></activity>
         <activity android:label="Configura Tu Perfil!" android:name="ConfigurarPerfil" android:screenOrientation="portrait"></activity>
+        <activity android:name="CambiarImagenPerfil" android:label="Cambia Tu Imágen!"></activity>
     </application>
 
 </manifest>

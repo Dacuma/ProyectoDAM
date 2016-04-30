@@ -70,6 +70,11 @@ public class ConfigurarPerfil extends Activity {
 		Intent i = new Intent(this, MenuPrincipal.class);
 		startActivity(i);
 	}
+	
+	public void cambiarImagenPerfil(View v) {
+		Intent i = new Intent(this, CambiarImagenPerfil.class);
+		startActivity(i);
+	}
 
 	// Método que guarda todos los nuevos datos en la bbdd
 	public void guardarBBDD(View v) throws InterruptedException {
@@ -85,7 +90,6 @@ public class ConfigurarPerfil extends Activity {
 		EditText etDCI = (EditText) findViewById(R.id.etDCI);
 		String dci = etDCI.getText().toString();
 		String colorFav = obtenerColorFavorito();
-		ThreadConfPerfil tcp = new ThreadConfPerfil();
 
 		if (!Validaciones.validarEmail(email)) {
 			Toast toast = Toast
@@ -273,7 +277,7 @@ public class ConfigurarPerfil extends Activity {
 	// cambios.
 	public class ThreadConfPerfil extends Thread {
 		String nombre = Login.nombreUsuario;
-		String modalidadJugada;
+		String modalidadJugada = "";
 		String numeroDCI = "";
 		String pais = "";
 		String provincia = "";
@@ -287,8 +291,8 @@ public class ConfigurarPerfil extends Activity {
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(
-						"jdbc:mysql://db4free.net:3306/magicplayers",
-						"dcuellar", "QAZwsx123");
+						ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
 			} catch (SQLException se) {
 
 			} catch (ClassNotFoundException e) {
@@ -302,8 +306,7 @@ public class ConfigurarPerfil extends Activity {
 				ResultSet rs = stat
 						.executeQuery("SELECT modalidadJugada, numeroDCI, pais, provincia, codigoPostal, colorFav, email from Usuario where nombreU='"
 								+ nombre + "';");
-				// Si el usuario existe y la contraseña es correcta bandera =
-				// true.
+
 				while (rs.next()) {
 					modalidadJugada = rs.getString("modalidadJugada");
 					numeroDCI = rs.getString("numeroDCI");
@@ -425,8 +428,8 @@ public class ConfigurarPerfil extends Activity {
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(
-						"jdbc:mysql://db4free.net:3306/magicplayers",
-						"dcuellar", "QAZwsx123");
+						ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
 			} catch (SQLException se) {
 				se.printStackTrace();
 			} catch (ClassNotFoundException e) {

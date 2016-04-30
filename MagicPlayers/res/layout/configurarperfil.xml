@@ -23,6 +23,7 @@
             android:id="@+id/btnCambiarAvatar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="cambiarImagenPerfil"
             android:text="Cambiar Avatar"
             android:textColor="#FFFFFF" />
 

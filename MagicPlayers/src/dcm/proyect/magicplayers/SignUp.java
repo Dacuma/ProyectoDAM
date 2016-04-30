@@ -53,10 +53,10 @@ public class SignUp extends Activity {
 		mail = text.getText().toString();
 		Spinner spinner = (Spinner) findViewById(R.id.spnPais);
 		String pais = "";
-		pais = String.valueOf(spinner.getSelectedItemPosition());
+		pais = String.valueOf(spinner.getSelectedItem().toString());
 		spinner = (Spinner) findViewById(R.id.spnProvincia);
 		String provincia = "";
-		provincia = String.valueOf(spinner.getSelectedItemPosition());
+		provincia = String.valueOf(spinner.getSelectedItem().toString());
 		text = (EditText) findViewById(R.id.etCP);
 		String cP = "";
 		cP = text.getText().toString();
@@ -170,8 +170,8 @@ public class SignUp extends Activity {
 				// Conexion con la base de datos.
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(
-						"jdbc:mysql://db4free.net:3306/magicplayers",
-						"dcuellar", "QAZwsx123");
+						ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
 			} catch (SQLException se) {
 
 			} catch (ClassNotFoundException e) {
@@ -207,7 +207,7 @@ public class SignUp extends Activity {
 					stat.executeUpdate("INSERT INTO Usuario VALUES ('" + nombre
 							+ "','" + passwd + "', NULL,'" + dci + "','" + pais
 							+ "','" + provincia + "','" + cp
-							+ "', NULL, NULL, NULL, 1, NULL,'" + email + "',"
+							+ "', NULL, NULL, 5, 1, NULL,'" + email + "',"
 							+ imagenPerfil + ")");
 				}
 				rs.close();

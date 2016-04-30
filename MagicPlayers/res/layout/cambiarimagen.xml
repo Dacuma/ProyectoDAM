@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/imgmenu"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected0"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilajani" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilchandra" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilelspeth" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilgarruk" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfiljace" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilkiora" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilliliana" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilnissa" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfilsarkhan" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/imfPerfilSelected9"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/perfiltezzeret" />
+
+            <RadioButton
+                android:id="@+id/rbPerfilSelected9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="volverConfPerfil"
+                android:text="Volver"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="guardarImagenBBDD"
+                android:text="Guardar"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
