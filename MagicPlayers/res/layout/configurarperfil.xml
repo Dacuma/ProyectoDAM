@@ -16,6 +16,7 @@
             android:id="@+id/btnCambiarContr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="lanzarCambiarPass"
             android:text="Cambiar Contraseña"
             android:textColor="#FFFFFF" />
 
@@ -138,7 +139,7 @@
             android:textColor="#FFFFFF" />
 
         <Spinner
-            android:id="@+id/spnPais"
+            android:id="@+id/spnPaisBJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#80FFFFFF"
@@ -154,7 +155,7 @@
             android:textColor="#FFFFFF" />
 
         <Spinner
-            android:id="@+id/spnProvincia"
+            android:id="@+id/spnProvinciaBJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#80FFFFFF"

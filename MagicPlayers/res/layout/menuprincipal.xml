@@ -40,7 +40,9 @@
                     android:layout_height="100dp"
                     android:layout_marginLeft="30dp"
                     android:background="@drawable/btnbuscarjugadores"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:onClick="lanzarBuscarJugadores" />
+
             </TableRow>
 
             <TableRow
@@ -152,7 +154,7 @@
                 android:gravity="center" >
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tvFormatos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"

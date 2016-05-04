@@ -51,10 +51,10 @@ public class SignUp extends Activity {
 		text = (EditText) findViewById(R.id.etEmailSI);
 		String mail = "";
 		mail = text.getText().toString();
-		Spinner spinner = (Spinner) findViewById(R.id.spnPais);
+		Spinner spinner = (Spinner) findViewById(R.id.spnPaisBJ);
 		String pais = "";
 		pais = String.valueOf(spinner.getSelectedItem().toString());
-		spinner = (Spinner) findViewById(R.id.spnProvincia);
+		spinner = (Spinner) findViewById(R.id.spnProvinciaBJ);
 		String provincia = "";
 		provincia = String.valueOf(spinner.getSelectedItem().toString());
 		text = (EditText) findViewById(R.id.etCP);

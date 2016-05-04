@@ -91,7 +91,7 @@
             android:text="*Pais" />
 
         <Spinner
-            android:id="@+id/spnPais"
+            android:id="@+id/spnPaisBJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/paises" />
@@ -103,7 +103,7 @@
             android:text="*Provincia" />
 
         <Spinner
-            android:id="@+id/spnProvincia"
+            android:id="@+id/spnProvinciaBJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/provincias" />

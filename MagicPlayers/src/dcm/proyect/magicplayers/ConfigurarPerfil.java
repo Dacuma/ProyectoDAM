@@ -45,9 +45,9 @@ public class ConfigurarPerfil extends Activity {
 		// RELLENO LOS CAMPOS CON LOS DATOS OBTENIDOS DE LA BBDD
 		String fj = tcp.getModalidadJugada();
 		rellenarFormatosJugados(fj);
-		Spinner spPais = (Spinner) findViewById(R.id.spnPais);
+		Spinner spPais = (Spinner) findViewById(R.id.spnPaisBJ);
 		spPais.setSelection(0);
-		Spinner spProvincia = (Spinner) findViewById(R.id.spnProvincia);
+		Spinner spProvincia = (Spinner) findViewById(R.id.spnProvinciaBJ);
 		spProvincia.setSelection(ArrayUtils.indexOf(provincias,
 				tcp.getProvincia()));
 		EditText etCP = (EditText) findViewById(R.id.etCP);
@@ -75,13 +75,18 @@ public class ConfigurarPerfil extends Activity {
 		Intent i = new Intent(this, CambiarImagenPerfil.class);
 		startActivity(i);
 	}
+	
+	public void lanzarCambiarPass(View v) {
+		Intent i = new Intent(this, CambiarPassword.class);
+		startActivity(i);
+	}
 
 	// Método que guarda todos los nuevos datos en la bbdd
 	public void guardarBBDD(View v) throws InterruptedException {
 		String formatosJugados = obtenerFormatosJugados();
-		Spinner spPais = (Spinner) findViewById(R.id.spnPais);
+		Spinner spPais = (Spinner) findViewById(R.id.spnPaisBJ);
 		String pais = spPais.getSelectedItem().toString();
-		Spinner spProvincia = (Spinner) findViewById(R.id.spnProvincia);
+		Spinner spProvincia = (Spinner) findViewById(R.id.spnProvinciaBJ);
 		String provincia = spProvincia.getSelectedItem().toString();
 		EditText etCP = (EditText) findViewById(R.id.etCP);
 		String cP = etCP.getText().toString();

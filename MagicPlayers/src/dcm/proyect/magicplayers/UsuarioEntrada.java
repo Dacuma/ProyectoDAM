@@ -6,12 +6,14 @@ public class UsuarioEntrada {
 	private String textoEncima; 
 	private String textoDebajo; 
 	private String textoDerecha;
+	String modalidadJugada;
 
-	public UsuarioEntrada(int idImagen, String textoEncima, String textoDebajo,  String textoDerecha) { 
+	public UsuarioEntrada(int idImagen, String textoEncima, String textoDebajo,  String textoDerecha, String modalidadJugada) { 
 	    this.idImagen = idImagen; 
 	    this.textoEncima = textoEncima; 
 	    this.textoDebajo = textoDebajo; 
 	    this.textoDerecha =  textoDerecha;
+	    this.modalidadJugada = modalidadJugada;
 	}
 
 	public String get_textoEncima() { 

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="22dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="NOMBRE DE USUARIO"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/etNombreBJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="PAIS"
+            android:textSize="22sp" />
+
+        <CheckBox
+            android:id="@+id/cbBuscarPais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar país" />
+
+        <Spinner
+            android:id="@+id/spnPaisBJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/paises" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="PROVINCIA"
+            android:textSize="22sp" />
+
+        <CheckBox
+            android:id="@+id/cbBuscarProvincia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar provincia" />
+
+        <Spinner
+            android:id="@+id/spnProvinciaBJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/provincias" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CÓDIGO POSTAL"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/etCPBJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="DISTANCIA"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:gravity="center" >
+
+            <CheckBox
+                android:id="@+id/cbMayorQueBJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Mayor que " />
+
+            <EditText
+                android:id="@+id/etDistanciaMayorBJ"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:maxLength="4" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Km" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/cbMenorQueBJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Menor que " />
+
+            <EditText
+                android:id="@+id/etDistanciaMenorBJ"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="4" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Km" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="FORMATOS JUGADOS"
+            android:textSize="22sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/cbVintageBJ"
+                    style="Widget.Holo.CompoundButton.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vintage"
+                    android:textColor="#000000" />
+
+                <CheckBox
+                    android:id="@+id/cbLegacyBJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Legacy"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/cbModernBJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modern"
+                    android:textColor="#000000" />
+
+                <CheckBox
+                    android:id="@+id/cbStandardBJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Standard"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/cbPauperBJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pauper"
+                    android:textColor="#000000" />
+
+                <CheckBox
+                    android:id="@+id/cbCommanderBJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Commander"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/cbCasualBJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Casual"
+                    android:textColor="#000000" />
+
+                <CheckBox
+                    android:id="@+id/cbOtrosBJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otros"
+                    android:textColor="#000000" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnVolverBJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="lanzarVolverMP"
+                android:text="Volver" />
+
+            <Button
+                android:id="@+id/btnBuscarBJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="lanzarBuscarUsuarios"
+                android:text="Buscar" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

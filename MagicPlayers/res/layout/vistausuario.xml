@@ -30,7 +30,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/tvFormatosJugados"
+                android:id="@+id/tvNombreJugador"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombre de Usuario"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="43dp"
-                android:text="PRUEBA"
+                android:text="Km"
                 android:textColor="#FFFFFF"
                 android:textSize="23sp" />
 
@@ -101,11 +101,14 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvFormatos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="-43dp"
+            android:paddingTop="23dp"
             android:text="TextView"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="23sp" />
 
     </LinearLayout>
 

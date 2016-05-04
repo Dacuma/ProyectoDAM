@@ -22,7 +22,7 @@ public class VistaUsuario extends Activity{
 		Bundle bundle = getIntent().getExtras();
 		String nombreU = bundle.getString("nombreU");
 		String distanciaU = bundle.getString("distanciaU");
-		TextView tv = (TextView) findViewById(R.id.tvFormatosJugados);
+		TextView tv = (TextView) findViewById(R.id.tvNombreJugador);
 		tv.setText(nombreU);
 		ThreadVistaUsuario tvu = new ThreadVistaUsuario(nombreU);
 		tvu.start();
@@ -39,10 +39,52 @@ public class VistaUsuario extends Activity{
 		tv.setText(tvu.getDatos().get(2));
 		tv = (TextView) findViewById(R.id.tvDistanciaMP);
 		tv.setText(distanciaU);
-		//To-Do
-		tv = (TextView) findViewById(R.id.textView5);
-		tv.setText("No definido");
+		//FORMATOS JUGADOS
+		TextView tv2 = (TextView) findViewById(R.id.tvFormatos);
+		tv2.setText(stringFormatosJugados(tvu.getDatos().get(3)));
 	}
+	
+	// Método para rellenar formatos jugados
+			public String stringFormatosJugados(String fj) {
+				String formato = "0";
+				String formatosJugados = "";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Vintage \n";
+				}
+				formato = "1";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Legacy \n";
+				}
+				formato = "2";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Modern \n";
+				}
+				formato = "3";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Standard \n";
+				}
+				formato = "4";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Pauper \n";
+				}
+				formato = "5";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Commander \n";
+				}
+				formato = "6";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Casual \n";
+				}
+				formato = "7";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = formatosJugados + "Otros \n";
+				}
+				if(formatosJugados.length()<1){
+					formatosJugados = "No definido";
+				}
+				return formatosJugados;
+
+			}
 	
 	
 	// Hilo que busca los jugadores mas cercanos del usuario
@@ -85,7 +127,6 @@ public class VistaUsuario extends Activity{
 						dato = rs.getString("provincia");
 						datos.add(dato);
 						dato = String.valueOf(rs.getInt("modalidadJugada"));
-					
 						datos.add(dato);
 
 					}

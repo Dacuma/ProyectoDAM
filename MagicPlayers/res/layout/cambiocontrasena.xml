@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvPassVieja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña Actual" />
+
+        <EditText
+            android:id="@+id/etPassVieja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/tvPassNueva1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña Nueva" />
+
+        <EditText
+            android:id="@+id/etPassNueva1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/tvPassNueva2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repite Contraseña" />
+
+        <EditText
+            android:id="@+id/etPassNueva2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnVolverCP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="lanzarVolver"
+                android:text="Volver" />
+
+            <Button
+                android:id="@+id/btnGuardarCP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="metodoGuardar"
+                android:text="Guardar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    
+
+</ScrollView>

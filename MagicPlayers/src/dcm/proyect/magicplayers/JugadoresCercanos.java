@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -90,10 +91,14 @@ public class JugadoresCercanos extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	
+
 
 	// Hilo que busca los jugadores mas cercanos del usuario
 	public class ThreadUsuariosCercanos extends Thread {
 
+		String modalidadJugada = "";
 		String nombre = "";
 		ArrayList<UsuarioEntrada> usuarios = new ArrayList<UsuarioEntrada>();
 		// Variable que controla el número de usuarios mostrados
@@ -135,7 +140,7 @@ public class JugadoresCercanos extends Activity {
 
 				// Se buscan los jugadores ordenados por proximidad
 				rs = stat
-						.executeQuery("Select nombreU, provincia, SQRT(POW((Usuario.latitud-"
+						.executeQuery("Select nombreU, modalidadJugada, provincia, SQRT(POW((Usuario.latitud-"
 								+ latitud
 								+ "), 2 ) + POW((Usuario.longitud-"
 								+ longitud
@@ -151,6 +156,7 @@ public class JugadoresCercanos extends Activity {
 				// Se obtienen los datos
 				while (rs.next()) {
 					String nombre = rs.getString("nombreU");
+					modalidadJugada = rs.getString("modalidadJugada");
 					String provincia = rs.getString("provincia");
 					String distancia = rs.getString("distancia");
 					int imgPerfil = rs.getInt("imgPerfil");
@@ -200,7 +206,7 @@ public class JugadoresCercanos extends Activity {
 						imgPerfil = R.drawable.perfiljace;
 					}
 					UsuarioEntrada du = new UsuarioEntrada(imgPerfil, nombre,
-							provincia, distancia);
+							provincia, distancia, modalidadJugada);
 					usuarios.add(du);
 				}
 				rs.close();
@@ -218,6 +224,10 @@ public class JugadoresCercanos extends Activity {
 
 		public ArrayList<UsuarioEntrada> get_usuarios() {
 			return usuarios;
+		}
+		
+		public String getModalidades(){
+			return modalidadJugada;
 		}
 
 	}

@@ -35,4 +35,9 @@ public class MenuPrincipal extends Activity {
 		Intent i = new Intent(this, ConfigurarPerfil.class);
 		startActivity(i);
 	}
+	
+	public void lanzarBuscarJugadores(View v){
+		Intent i = new Intent(this, BuscarJugadores.class);
+		startActivity(i);
+	}
 }
