@@ -92,7 +92,9 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="30dp"
-                    android:background="@drawable/btnanadirtorneo" />
+                    android:background="@drawable/btnanadirtorneo"
+                    android:onClick="lanzarAltaTorneo" />
+
             </TableRow>
 
             <TableRow

@@ -8,10 +8,23 @@
     <string name="login">Identificarse</string>
     <string name="signin">Registrarse</string>
     <string name="LOGIN">LOGIN</string>
+    
+    
+    <string-array name="formatos">
+        <item>Vintage</item>
+        <item>Legacy</item>
+        <item>Modern</item>
+        <item>Standard</item>
+        <item>Pauper</item>
+        <item>Commander</item>
+        <item>Casula</item>
+        <item>Otros</item>
+    </string-array>
 
     <string-array name="paises">
         <item>España</item>
     </string-array>
+   
     <string-array name="provincias">
         <item>A Coruna</item>
         <item>Alava</item>

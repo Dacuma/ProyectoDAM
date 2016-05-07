@@ -51,9 +51,10 @@
         <activity android:name="JugadoresBuscados" android:label="Busqueda" android:screenOrientation="portrait"></activity>
         <activity android:label="Datos del Usuario" android:name="VistaUsuario" android:screenOrientation="portrait"></activity>
         <activity android:label="Configura Tu Perfil!" android:name="ConfigurarPerfil" android:screenOrientation="portrait"></activity>
-        <activity android:name="CambiarImagenPerfil" android:label="Cambia Tu Imágen!"></activity>
-        <activity android:label="Cambia Tu Contraseña" android:name="CambiarPassword"   android:theme="@android:style/Theme.Dialog"></activity>
-        <activity android:label="Buscar Jugadores" android:name="BuscarJugadores" android:theme="@android:style/Theme.Black"></activity>
+        <activity android:name="CambiarImagenPerfil" android:label="Cambia Tu Imágen!" android:screenOrientation="portrait"></activity>
+        <activity android:label="Cambia Tu Contraseña" android:name="CambiarPassword"   android:theme="@android:style/Theme.Dialog" android:screenOrientation="portrait"></activity>
+        <activity android:label="Buscar Jugadores" android:name="BuscarJugadores" android:theme="@android:style/Theme.Black" android:screenOrientation="portrait"></activity>
+        <activity android:name="AltaTorneo" android:label="Alta Torneo"  android:theme="@android:style/Theme.Black" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

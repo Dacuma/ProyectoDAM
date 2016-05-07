@@ -40,4 +40,9 @@ public class MenuPrincipal extends Activity {
 		Intent i = new Intent(this, BuscarJugadores.class);
 		startActivity(i);
 	}
+	
+	public void lanzarAltaTorneo(View v){
+		Intent i = new Intent(this, AltaTorneo.class);
+		startActivity(i);
+	}
 }
