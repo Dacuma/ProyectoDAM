@@ -54,8 +54,7 @@ public class Login extends Activity {
 	// Evito que se pueda volver a atrás.
 	@Override
 	public void onBackPressed() {
-		super.finish();
-		return;
+		moveTaskToBack(true);
 	}
 
 	public void startSignUp(View v) {

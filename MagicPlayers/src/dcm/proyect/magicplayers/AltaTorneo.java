@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 public class AltaTorneo extends Activity {
 	int idTorneo = 0;
+	String nombreTorneo = "";
 	String provincia = "";
 	String ciudad = "";
 	String fecha = "";
@@ -48,11 +49,20 @@ public class AltaTorneo extends Activity {
 	}
 
 	public void altaTorneo(View v) {
+		boolean bandera = true;
+		// NOMBRE DEL TORNEO
+		EditText et = (EditText) findViewById(R.id.etATnTorneo);
+		nombreTorneo = et.getText().toString();
+		if (nombreTorneo.equals("")) {
+			Toast.makeText(this, "El nombre del torneo no puede estar vacío",
+					Toast.LENGTH_SHORT).show();
+			bandera = false;
+		}
 		// PROVINCIA
 		Spinner sp = (Spinner) findViewById(R.id.spnProvinciasAT);
 		provincia = sp.getSelectedItem().toString();
 		// CIUDAD
-		EditText et = (EditText) findViewById(R.id.etATCiudad);
+		et = (EditText) findViewById(R.id.etATCiudad);
 		ciudad = et.getText().toString();
 		// FECHA
 		DatePicker cv = (DatePicker) findViewById(R.id.dpATFecha);
@@ -63,37 +73,71 @@ public class AltaTorneo extends Activity {
 		// HORA
 		et = (EditText) findViewById(R.id.etATHora);
 		hora = et.getText().toString() + ":";
+		if (bandera) {
+			try {
+				int horaInsetada = Integer.parseInt(et.getText().toString());
+				if (horaInsetada < 0 || horaInsetada > 23) {
+					Toast.makeText(this, "La hora es incorrecta",
+							Toast.LENGTH_SHORT).show();
+					bandera = false;
+				}
+			} catch (Exception e) {
+				Toast.makeText(this, "La hora es incorrecta",
+						Toast.LENGTH_SHORT).show();
+				bandera = false;
+			}
+		}
 		et = (EditText) findViewById(R.id.etATMinutos);
 		hora = hora + et.getText().toString();
+		try {
+			int minutosInsetados = Integer.parseInt(et.getText().toString());
+			if (minutosInsetados < 0 || minutosInsetados > 59) {
+				Toast.makeText(this, "La hora es incorrecta",
+						Toast.LENGTH_SHORT).show();
+				bandera = false;
+			}
+		} catch (Exception e) {
+			Toast.makeText(this, "La hora es incorrecta", Toast.LENGTH_SHORT)
+					.show();
+			bandera = false;
+		}
 		// PRECIO
 		et = (EditText) findViewById(R.id.etATPrecio);
-		precio = Double.parseDouble(et.getText().toString());
+		if (bandera) {
+			try {
+				precio = Double.parseDouble(et.getText().toString());
+			} catch (Exception e) {
+				Toast.makeText(this, "El precio no puede estar vacío",
+						Toast.LENGTH_SHORT).show();
+				bandera = false;
+			}
+		}
 		// FORMATO
 		sp = (Spinner) findViewById(R.id.spnFormatoAT);
 		formato = sp.getSelectedItem().toString();
 		// DESCRIPCION
 		et = (EditText) findViewById(R.id.etATDescripcion);
 		descripcion = et.getText().toString();
-		// AFORO
-		et = (EditText) findViewById(R.id.etATAforo);
-		aforoMax = Integer.parseInt(et.getText().toString());
 
-		ThreadAltaTorneo tat = new ThreadAltaTorneo();
-		tat.start();
-		try {
-			tat.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (ciudad.equals("")) {
+			ciudad = provincia;
 		}
-		idTorneo++;
-		Toast.makeText(
-				this,
-				"INSERT INTO Torneo VALUES (" + idTorneo + ", '"
-						+ Login.nombreUsuario + "', '" + provincia + "', '"
-						+ ciudad + "', '" + fecha + "', '" + hora + "', '"
-						+ precio + "', '" + formato + "', '" + descripcion
-						+ "', " + aforoMax + ");", Toast.LENGTH_SHORT).show();
+
+		if (bandera) {
+			ThreadAltaTorneo tat = new ThreadAltaTorneo();
+			tat.start();
+			try {
+				tat.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			idTorneo++;
+			Toast.makeText(this, "El Torneo se ha añadido con éxito!",
+					Toast.LENGTH_SHORT).show();
+			Intent i = new Intent(this, MenuPrincipal.class);
+			startActivity(i);
+		}
 	}
 
 	// Hilo que devuelve el id del último torneo
@@ -157,10 +201,10 @@ public class AltaTorneo extends Activity {
 			try {
 				Statement stat = conn.createStatement();
 				stat.executeUpdate("INSERT INTO Torneo VALUES (" + idTorneo
-						+ ", '" + Login.nombreUsuario + "', '" + provincia
-						+ "', '" + ciudad + "', '" + fecha + "', '" + hora
-						+ "', '" + precio + "', '" + formato + "', '"
-						+ descripcion + "', " + aforoMax + ");");
+						+ ", '" + Login.nombreUsuario + "', '" + nombreTorneo
+						+ "', '" + provincia + "', '" + ciudad + "', '" + fecha
+						+ "', '" + hora + "', '" + precio + "', '" + formato
+						+ "', '" + descripcion + "', 0);");
 
 			} catch (SQLException e) {
 

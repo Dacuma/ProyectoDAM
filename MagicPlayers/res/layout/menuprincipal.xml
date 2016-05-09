@@ -85,7 +85,8 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="30dp"
-                    android:background="@drawable/btnbuscartorneos" />
+                    android:background="@drawable/btnbuscartorneos"
+                    android:onClick="lanzarTorneosBuscados" />
 
                 <Button
                     android:id="@+id/button4"

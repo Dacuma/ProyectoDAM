@@ -10,6 +10,20 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="22dp" >
+        
+         <TextView
+            android:id="@+id/tvATnTorneo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOMBRE DEL TORNEO"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/etATnTorneo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvATProvincia"
@@ -138,65 +152,47 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DESCRIPCIÓN"
-            android:textSize="22sp" />
+            android:textSize="22sp" 
+            android:maxLength="250"/>
 
         <EditText
             android:id="@+id/etATDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-             android:lines="4"
             android:layout_weight="1.22"
             android:ems="10"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:lines="4" />
 
-        <TextView
-            android:id="@+id/tvATAforo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="AFORO MÁXIMO"
-            android:textSize="22sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal" >
-
-            <EditText
-                android:id="@+id/etATAforo"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="number"
-                android:maxLength="4" />
-
-            <TextView
-                android:id="@+id/tvATAforo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Personas" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TableLayout
+            android:id="@+id/TableLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="center"
+            android:paddingTop="12sp"
+            android:stretchColumns="*" >
 
-            <Button
-                android:id="@+id/btnVolverAT"
+           <TableRow
+                android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="volverAT"
-                android:text="Volver" />
+                android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/btnAltaAT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="altaTorneo"
-                android:text="Alta" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnVolverAT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="volverAT"
+                    android:text="Volver" />
+
+                <Button
+                    android:id="@+id/btnAltaAT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="altaTorneo"
+                    android:text="Alta" />
+             </TableRow>
+
+        </TableLayout>
     </LinearLayout>
 
 </ScrollView>

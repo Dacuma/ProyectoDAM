@@ -25,7 +25,7 @@ public class JugadoresBuscados extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.mostrarusuarios);
+		setContentView(R.layout.mostrarusuariostorneos);
 		Bundle extras = getIntent().getExtras(); 
 		String consultaString = extras.getString("consulta");
 		consulta = consultaString;
