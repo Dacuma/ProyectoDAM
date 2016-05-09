@@ -39,7 +39,7 @@ public class MenuPrincipal extends Activity {
 	}
 	
 	public void lanzarTorneosBuscados(View v){
-		Intent i = new Intent(this, TorneosBuscados.class);
+		Intent i = new Intent(this, BuscarTorneos.class);
 		startActivity(i);
 	}
 	

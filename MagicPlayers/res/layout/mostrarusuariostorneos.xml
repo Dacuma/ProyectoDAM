@@ -13,7 +13,7 @@
             android:id="@android:id/empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Ups, No se ha encontrado ningún usuario!" />
+            android:text="Ups, No se ha encontrado ningún resultado! Cambia tus patrones de búsqueda!" />
 
         <ListView
             android:id="@+id/lvUsers"

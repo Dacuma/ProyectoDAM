@@ -21,11 +21,16 @@ import android.widget.AdapterView.OnItemClickListener;
 
 
 public class TorneosBuscados  extends Activity {
-
+	String consulta;
+	int idTorneo;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mostrarusuariostorneos);
+		Bundle extras = getIntent().getExtras(); 
+		String consultaString = extras.getString("consulta");
+		consulta = consultaString;
 		ArrayList<TorneoEntrada> torneosBuscados = new ArrayList<TorneoEntrada>();
 		ThreadTorneosBuscados ttb = new ThreadTorneosBuscados();
 		try {
@@ -64,12 +69,18 @@ public class TorneosBuscados  extends Activity {
 			}
 		});
 
-		// Método que se ejecuta al clickar sobre un usuario
+		// Método que se ejecuta al clickar sobre un torneo
 		lista.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> pariente, View view,
 					int posicion, long id) {
-				
+				Intent i = new Intent(TorneosBuscados.this,
+						VistaTorneo.class);
+				TorneoEntrada elegido = (TorneoEntrada) pariente
+						.getItemAtPosition(posicion);
+				int idTorneo = elegido.getID();
+				i.putExtra("idTorneo", idTorneo);
+				startActivity(i);
 			}
 		});
 	}
@@ -114,7 +125,7 @@ public class TorneosBuscados  extends Activity {
 				// Se obtienen las coordenadas del usuario
 				Statement stat = conn.createStatement();
 				ResultSet rs = stat
-						.executeQuery("SELECT * from Torneo");
+						.executeQuery("SELECT * from Torneo where nombreTorneo is not null " +consulta);
 
 				// Se obtienen los datos
 				while (rs.next()) {
@@ -122,9 +133,10 @@ public class TorneosBuscados  extends Activity {
 					String modalidadTorneo = rs.getString("formato");
 					String provinciaTorneo = rs.getString("provincia");
 					String precioTorneo = Double.toString(rs.getDouble("precio"));
+					int id = rs.getInt("idTorneo");
 					
 					TorneoEntrada te = new TorneoEntrada(nombreTorneo, modalidadTorneo,
-							provinciaTorneo, precioTorneo);
+							provinciaTorneo, precioTorneo, id);
 					torneos.add(te);
 				}
 				rs.close();

@@ -55,7 +55,9 @@
         <activity android:label="Cambia Tu Contraseña" android:name="CambiarPassword"   android:theme="@android:style/Theme.Dialog" android:screenOrientation="portrait"></activity>
         <activity android:label="Buscar Jugadores" android:name="BuscarJugadores" android:theme="@android:style/Theme.Black" android:screenOrientation="portrait"></activity>
         <activity android:name="AltaTorneo" android:label="Alta Torneo"  android:theme="@android:style/Theme.Black" android:screenOrientation="portrait"></activity>
-        <activity android:name="TorneosBuscados" android:label="Lista de Torneos"></activity>
+        <activity android:name="TorneosBuscados" android:label="Lista de Torneos" android:screenOrientation="portrait"></activity>
+        <activity android:name="BuscarTorneos" android:label="Buscar Torneos" android:theme="@android:style/Theme.Black" android:screenOrientation="portrait"></activity>
+        <activity android:name="VistaTorneo" android:label="Datos del torneo"></activity>
     </application>
 
 </manifest>

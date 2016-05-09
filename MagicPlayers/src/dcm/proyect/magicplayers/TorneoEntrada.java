@@ -5,12 +5,14 @@ public class TorneoEntrada {
 	private String textoFormatoTorneo; 
 	private String textoCiudadTorneo;
 	private String textoPrecioTorneo;
+	int id;
 
-	public TorneoEntrada(String textoNombreTorneo, String textoFormatoTorneo,  String textoCiudadTorneo, String textoPrecioTorneo) { 
+	public TorneoEntrada(String textoNombreTorneo, String textoFormatoTorneo,  String textoCiudadTorneo, String textoPrecioTorneo, int id) { 
 	    this.textoNombreTorneo = textoNombreTorneo; 
 	    this.textoFormatoTorneo = textoFormatoTorneo; 
 	    this.textoCiudadTorneo = textoCiudadTorneo; 
 	    this.textoPrecioTorneo =  textoPrecioTorneo;
+	    this.id = id;
 	}
 
 	public String getTextoNombreTorneo() {
@@ -27,6 +29,10 @@ public class TorneoEntrada {
 
 	public String getTextoPrecioTorneo() {
 		return textoPrecioTorneo;
+	}
+	
+	public int getID() {
+		return id;
 	}
 
 	
