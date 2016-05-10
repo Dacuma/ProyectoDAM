@@ -49,7 +49,7 @@ public class TorneosBuscados  extends Activity {
 			public void onEntrada(Object entrada, View view) {
 				TextView textoNT = (TextView) view
 						.findViewById(R.id.textoNombreTorneo);
-				textoNT.setText("Nombre: " + ((TorneoEntrada) entrada)
+				textoNT.setText(((TorneoEntrada) entrada)
 						.getTextoNombreTorneo());
 
 				TextView textoFT = (TextView) view

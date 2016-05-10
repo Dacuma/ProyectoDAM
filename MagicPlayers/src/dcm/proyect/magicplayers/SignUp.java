@@ -205,7 +205,7 @@ public class SignUp extends Activity {
 					// Encriptamos la contraseña para aumentar la seguridad.
 					passwd = EncriptarPasswd.encriptar(passwd);
 					stat.executeUpdate("INSERT INTO Usuario VALUES ('" + nombre
-							+ "','" + passwd + "', NULL,'" + dci + "','" + pais
+							+ "','" + passwd + "', 9,'" + dci + "','" + pais
 							+ "','" + provincia + "','" + cp
 							+ "', NULL, NULL, 5, 1, NULL,'" + email + "',"
 							+ imagenPerfil + ")");

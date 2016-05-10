@@ -238,6 +238,9 @@ public class ConfigurarPerfil extends Activity {
 		if (cb.isChecked()) {
 			formatosJugados = formatosJugados + "7";
 		}
+		if(formatosJugados.equals("")){
+			formatosJugados = "9";
+		}
 		return formatosJugados;
 	}
 

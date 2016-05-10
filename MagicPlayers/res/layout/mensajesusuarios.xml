@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" 
+        android:padding="33sp">
+
+        <TextView
+            android:id="@+id/tvUsuarioEmisor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="De: "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tvUsuarioReceptor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Para:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
+            android:text="Asunto:" />
+        
+          <EditText
+            android:id="@+id/etAsunto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2sp"
+            android:ems="10"
+            android:gravity="top"
+            android:lines="1"
+            android:maxLength="15" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
+            android:text="Mensaje:" />
+
+        <EditText
+            android:id="@+id/etMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32sp"
+            android:layout_marginTop="2sp"
+            android:ems="10"
+            android:gravity="top"
+            android:lines="7"
+            android:maxLength="999" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnVolverMU"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="volver"
+                    android:text="Volver" />
+
+                <Button
+                    android:id="@+id/btnEnviarMU"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="enviarMensaje"
+                    android:text="Enviar" />
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+    
+
+</ScrollView>

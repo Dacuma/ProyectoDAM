@@ -22,9 +22,8 @@ public class BuscarJugadores extends Activity {
 	}
 
 	public void lanzarBuscarUsuarios(View v) {
-		String consulta = "";
+		String consulta = "where nombreU != '"+Login.nombreUsuario+"' ";
 		boolean bandera = true;
-		// Nombre Usuario
 		EditText et1 = (EditText) findViewById(R.id.etNombreBJ);
 		if (et1.getText().toString().length() > 0) {
 			consulta = consulta + "and nombreU LIKE '%" + et1.getText().toString()
@@ -114,11 +113,11 @@ public class BuscarJugadores extends Activity {
 			if (cb4.isChecked() && menorQue.getText().toString().length() > 0) {
 				consulta = consulta + "and distancia*100 <"
 						+ menorQue.getText().toString() + " ";
+			} else if (cb4.isChecked()
+					&& menorQue.getText().toString().length() > 0) {
+				consulta = consulta + "having distancia*100 <"
+						+ menorQue.getText().toString() + " ";
 			}
-		} else if (cb4.isChecked()
-				&& menorQue.getText().toString().length() > 0) {
-			consulta = consulta + "having distancia*100 <"
-					+ menorQue.getText().toString() + " ";
 		}
 		if (bandera) {
 			Intent i = new Intent(this, JugadoresBuscados.class);

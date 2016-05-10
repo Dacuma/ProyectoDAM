@@ -145,7 +145,7 @@ public class JugadoresBuscados extends Activity {
 								+ latitud
 								+ "), 2 ) + POW((Usuario.longitud-"
 								+ longitud
-								+ "), 2 )) as distancia from Usuario where nombreU != '"+Login.nombreUsuario+"' " + consulta + " order by SQRT(POW((Usuario.latitud-"
+								+ "), 2 )) as distancia from Usuario " + consulta + " order by SQRT(POW((Usuario.latitud-"
 								+ latitud 
 								+ "), 2 ) + POW((Usuario.longitud-"
 								+ longitud

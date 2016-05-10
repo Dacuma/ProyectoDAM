@@ -8,19 +8,23 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 //Clase que muestra los datos de un usuario concreto.
 public class VistaUsuario extends Activity{
 
+	String nombreU = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.vistausuario);
 		Bundle bundle = getIntent().getExtras();
-		String nombreU = bundle.getString("nombreU");
+		nombreU = bundle.getString("nombreU");
 		String distanciaU = bundle.getString("distanciaU");
 		TextView tv = (TextView) findViewById(R.id.tvNombreJugador);
 		tv.setText(nombreU);
@@ -42,6 +46,12 @@ public class VistaUsuario extends Activity{
 		//FORMATOS JUGADOS
 		TextView tv2 = (TextView) findViewById(R.id.tvFormatos);
 		tv2.setText(stringFormatosJugados(tvu.getDatos().get(3)));
+		
+		if(nombreU.equals(Login.nombreUsuario)){
+			ImageView img = (ImageView)findViewById(R.id.imgEnviarMensaje);
+			img.setVisibility(View.INVISIBLE);
+			
+		}
 	}
 	
 	// Método para rellenar formatos jugados
@@ -79,11 +89,18 @@ public class VistaUsuario extends Activity{
 				if (fj.indexOf(formato) != -1) {
 					formatosJugados = formatosJugados + "Otros \n";
 				}
-				if(formatosJugados.length()<1){
-					formatosJugados = "No definido";
+				formato = "9";
+				if (fj.indexOf(formato) != -1) {
+					formatosJugados = "No Definido";
 				}
 				return formatosJugados;
 
+			}
+			
+			public void enviarMensaje(View v){
+				Intent i = new Intent(this, EnviarMensaje.class);
+				i.putExtra("receptor", nombreU);
+				startActivity(i);
 			}
 	
 	

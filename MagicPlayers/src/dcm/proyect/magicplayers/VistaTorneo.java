@@ -13,6 +13,7 @@ import android.R.color;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,8 @@ import android.widget.Toast;
 
 public class VistaTorneo extends Activity {
 	int idTorneo;
+	int inscritosIniciales;
+	int inscritosActuales;
 	boolean estaInscrito = false;
 	ThreadVistaTorneo tvt = new ThreadVistaTorneo();
 
@@ -39,6 +42,9 @@ public class VistaTorneo extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		inscritosIniciales = Integer.parseInt(tvt.getDatos().get(9));
+		inscritosActuales = inscritosIniciales;
 
 		if (estaInscrito) {
 			Button btnInscribirse = (Button) findViewById(R.id.btnInscribirse);
@@ -78,45 +84,61 @@ public class VistaTorneo extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+			AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
 			dlgAlert.setMessage("Enhorabuena. Te han inscrito en el torneo.");
 			dlgAlert.setTitle("Inscrito!");
-			dlgAlert.setPositiveButton("Aceptar",null);
+			dlgAlert.setPositiveButton("Aceptar", null);
 			dlgAlert.setCancelable(true);
 			dlgAlert.create().show();
-			
+
 			Button btnInscribirse = (Button) findViewById(R.id.btnInscribirse);
 			btnInscribirse.setText("Inscrito");
 			btnInscribirse.setTextColor(Color.RED);
+			inscritosActuales++;
+			TextView tv = (TextView) findViewById(R.id.tvInscritosVT);
+			tv.setText("Jugadores inscritos: " + inscritosActuales);
 			estaInscrito = true;
 		} else {
-			AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+			AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
 			dlgAlert.setMessage("¿Desea desinscribirse del torneo?");
 			dlgAlert.setTitle("Desincribirse");
-			dlgAlert.setNegativeButton("No",new DialogInterface.OnClickListener() {
-		        public void onClick(DialogInterface dialog, int which) {
-		        }
-		      });
-			dlgAlert.setPositiveButton("Si",new DialogInterface.OnClickListener() {
-		        public void onClick(DialogInterface dialog, int which) {
-		        	ThreadInscribirTorneo tit = new ThreadInscribirTorneo();
-		        	tit.start();
-					try {
-						tit.join();
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} 
-					Button btnInscribirse = (Button) findViewById(R.id.btnInscribirse);
-					btnInscribirse.setText("Inscribirse");
-					estaInscrito = false;
-					btnInscribirse.setTextColor(Color.WHITE);
-		          }		        
-		      });
+			dlgAlert.setNegativeButton("No",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+						}
+					});
+			dlgAlert.setPositiveButton("Si",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							ThreadInscribirTorneo tit = new ThreadInscribirTorneo();
+							tit.start();
+							try {
+								tit.join();
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							Button btnInscribirse = (Button) findViewById(R.id.btnInscribirse);
+							btnInscribirse.setText("Inscribirse");
+							inscritosActuales--;
+							TextView tv = (TextView) findViewById(R.id.tvInscritosVT);
+							tv.setText("Jugadores inscritos: " + inscritosActuales);
+							estaInscrito = false;
+							btnInscribirse.setTextColor(Color.WHITE);
+						}
+					});
 			dlgAlert.setCancelable(true);
 			dlgAlert.create().show();
-			
+
 		}
+	}
+	
+	public void verInsrcritos(View v) {
+		String consulta;
+		consulta = " join Participacion where Usuario.nombreU = Participacion.nombreU and Participacion.idTorneo = '"+idTorneo+"' ";
+		Intent i = new Intent(this, JugadoresBuscados.class);
+		i.putExtra("consulta", consulta);
+		startActivity(i);		
 	}
 
 	// Hilo que busca los torneos
@@ -220,14 +242,17 @@ public class VistaTorneo extends Activity {
 			}
 
 			try {
-				if(!estaInscrito){
-				// Se obtienen las coordenadas del usuario
-				Statement stat = conn.createStatement();
-				stat.executeUpdate("Insert into Participacion values ('"
-						+ Login.nombreUsuario + "', " + idTorneo + ");");
-				}else{
+				if (!estaInscrito) {
+					// Se obtienen las coordenadas del usuario
 					Statement stat = conn.createStatement();
-					stat.executeUpdate("Delete from Participacion where nombreU = '"+Login.nombreUsuario+"' and idTorneo=" +idTorneo);
+					stat.executeUpdate("Insert into Participacion values ('"
+							+ Login.nombreUsuario + "', " + idTorneo + ");");
+				} else {
+					Statement stat = conn.createStatement();
+					stat.executeUpdate("Delete from Participacion where nombreU = '"
+							+ Login.nombreUsuario
+							+ "' and idTorneo="
+							+ idTorneo);
 				}
 			} catch (SQLException e) {
 

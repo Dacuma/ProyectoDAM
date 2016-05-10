@@ -120,6 +120,7 @@
                     android:id="@+id/btnVerInscritos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="verInsrcritos"
                     android:text="Ver Inscritos"
                     android:textColor="#FFFFFF" />
 
