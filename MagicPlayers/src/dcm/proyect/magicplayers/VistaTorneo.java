@@ -179,7 +179,7 @@ public class VistaTorneo extends Activity {
 					datos.add("Hora: " + rs.getString("hora"));
 					datos.add("Precio: " + rs.getString("precio") + "€");
 					datos.add("Formato: " + rs.getString("formato"));
-					if (rs.getString("descripción").length() == 0) {
+					if (rs.getString("descripcion").length() == 0) {
 						descripcion = "No hay descripción.";
 					} else {
 						descripcion = rs.getString("descripción");
