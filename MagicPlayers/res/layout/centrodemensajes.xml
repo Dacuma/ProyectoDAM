@@ -30,11 +30,23 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
 
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Contenido Tab 1" />
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@android:id/empty"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="No tienes ningún mensaje sin leer." />
+
+                        <ListView
+                            android:id="@+id/lvMensajesNoLeidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                        </ListView>
+                    </FrameLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -43,11 +55,23 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Contenido Tab 2" />
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dip"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@android:id/empty"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="No tienes ningún mensaje leido." />
+
+                        <ListView
+                            android:id="@+id/lvMensajesLeidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                        </ListView>
+                    </FrameLayout>
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
