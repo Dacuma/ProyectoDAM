@@ -9,6 +9,8 @@ import java.sql.Statement;
 import org.apache.commons.lang3.ArrayUtils;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -79,6 +81,36 @@ public class ConfigurarPerfil extends Activity {
 	public void lanzarCambiarPass(View v) {
 		Intent i = new Intent(this, CambiarPassword.class);
 		startActivity(i);
+	}
+	
+	public void eliminarCuenta(View v) {
+		AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+		dlgAlert.setMessage("¿Desea eliminar su cuenta de usuario ("+Login.nombreUsuario+")? Eliminar su cuenta eliminará todo lo relacionado a la misma permantentemente y no podrá ser recuperado.");
+		dlgAlert.setTitle("Eliminar Cuenta");
+		dlgAlert.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				ThreadEliminarCuenta tec = new ThreadEliminarCuenta();
+				tec.start();
+				try {
+					tec.join();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+				Login.nombreUsuario="";
+				Login.contrasenaUsuario="";
+				Toast.makeText(ConfigurarPerfil.this, "Su cuenta se ha eliminado.", Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(ConfigurarPerfil.this, Login.class);
+				startActivity(i);
+			}
+		});
+		dlgAlert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				// dismiss the dialog
+			}
+		});
+		dlgAlert.setCancelable(true);
+		dlgAlert.create().show();
 	}
 
 	// Método que guarda todos los nuevos datos en la bbdd
@@ -431,6 +463,42 @@ public class ConfigurarPerfil extends Activity {
 					+ cP + "', email = '" + email + "', numeroDCI = '" + dci
 					+ "', colorFav = " + colorFav + " WHERE nombreU = '"
 					+ Login.nombreUsuario + "'";
+
+			Connection conn = null;
+			try {
+				Class.forName("com.mysql.jdbc.Driver").newInstance();
+				conn = DriverManager.getConnection(
+						ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
+			} catch (SQLException se) {
+				se.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			try {
+				Statement stat = conn.createStatement();
+				stat.executeUpdate(consulta);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//Se elimina la cuenta del usuario
+	public class ThreadEliminarCuenta extends Thread {
+
+
+		// Almacena los valores en la bbdd
+		public void run() {
+			String consulta = "Delete from Usuario WHERE nombreU = '"+Login.nombreUsuario+"';";
 
 			Connection conn = null;
 			try {

@@ -276,28 +276,42 @@
                 android:textColor="#000000" />
         </RadioGroup>
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:stretchColumns="*" >
 
-            <Button
-                android:id="@+id/btnVolver"
+            <TableRow
+                android:id="@+id/tableRow5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="volverMenuPrincipal"
-                android:text="Volver"
-                android:textColor="#FFFFFF" />
+                android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/btnGuardar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="guardarBBDD"
-                android:text="Guardar"
-                android:textColor="#FFFFFF" />
+                <Button
+                    android:id="@+id/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="volverMenuPrincipal"
+                    android:text="Volver"
+                    android:textColor="#FFFFFF" />
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="guardarBBDD"
+                    android:text="Guardar"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnEliminarCuentaCF"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="eliminarCuenta"
+            android:text="Eliminar Cuenta"
+            android:textColor="#FFFFFF" />
+
     </LinearLayout>
 
 </ScrollView>
