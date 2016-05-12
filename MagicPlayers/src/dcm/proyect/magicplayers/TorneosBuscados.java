@@ -74,12 +74,12 @@ public class TorneosBuscados  extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> pariente, View view,
 					int posicion, long id) {
-				Intent i = new Intent(TorneosBuscados.this,
-						VistaTorneo.class);
 				TorneoEntrada elegido = (TorneoEntrada) pariente
 						.getItemAtPosition(posicion);
-				int idTorneo = elegido.getID();
-				i.putExtra("idTorneo", idTorneo);
+				int idTorneoE = elegido.getID();
+				Intent i = new Intent(TorneosBuscados.this,
+						VistaTorneo.class);
+				i.putExtra("idTorneo", idTorneoE);
 				startActivity(i);
 			}
 		});

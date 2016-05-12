@@ -8,58 +8,64 @@
         android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bgbuscartorneos"
         android:orientation="vertical"
         android:padding="22dp" >
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80980000"
             android:gravity="center"
             android:text="NOMBRE DEL TORNEO"
-            android:textSize="22sp" />
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/etNombreTorneoBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:ems="10" >
-
-            <requestFocus />
         </EditText>
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80980000"
             android:gravity="center"
             android:text="PROVINCIA"
-            android:textSize="22sp" />
+            android:textColor="#FFFFFF" />
 
         <CheckBox
             android:id="@+id/cbBuscarProvinciaBT"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:text="Buscar provincia" />
 
         <Spinner
             android:id="@+id/spnProvinciaBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:entries="@array/provincias" />
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80980000"
             android:gravity="center"
             android:text="FECHA"
-            android:textSize="22sp" />
-        
+            android:textColor="#FFFFFF" />
+
         <CheckBox
             android:id="@+id/cbBuscarFechaBT"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:text="Buscar por fecha" />
 
         <LinearLayout
@@ -70,24 +76,27 @@
 
             <DatePicker
                 android:id="@+id/dpATFechaBT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#80FFFFFF"
+                android:calendarViewShown="false" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80980000"
             android:gravity="center"
             android:text="PRECIO"
-            android:textSize="22sp" />
+            android:textColor="#FFFFFF" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
-            android:gravity="center" >
+            android:background="#80FFFFFF"
+            android:gravity="center"
+            android:paddingLeft="23dp" >
 
             <CheckBox
                 android:id="@+id/cbMayorQueBT"
@@ -99,7 +108,6 @@
                 android:id="@+id/etPrecioMayorBT"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:inputType="number"
                 android:maxLength="4" />
 
@@ -111,11 +119,12 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="23dp"
+            android:background="#80FFFFFF"
             android:gravity="center"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:paddingLeft="23dp" >
 
             <CheckBox
                 android:id="@+id/cbMenorQueBT"
@@ -139,43 +148,55 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80980000"
             android:gravity="center"
             android:text="FORMATOS JUGADOS"
-            android:textSize="22sp" />
-        
+            android:textColor="#FFFFFF" />
+
         <CheckBox
-                android:id="@+id/cbformatoJugadoBT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Buscar por formato" />
+            android:id="@+id/cbformatoJugadoBT"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
+            android:text="Buscar por formato" />
 
         <Spinner
             android:id="@+id/spnFormatoBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:entries="@array/formatos" />
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:paddingTop="12sp"
+            android:stretchColumns="*" >
 
-            <Button
-                android:id="@+id/btnVolverBT"
+            <TableRow
+                android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="lanzarVolverMP"
-                android:text="Volver" />
+                android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/btnBuscarBT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="lanzarBuscarTorneos"
-                android:text="Buscar" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnVolverBT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="lanzarVolverMP"
+                    android:text="Volver"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnBuscarBT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="lanzarBuscarTorneos"
+                    android:text="Buscar"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 
 </ScrollView>

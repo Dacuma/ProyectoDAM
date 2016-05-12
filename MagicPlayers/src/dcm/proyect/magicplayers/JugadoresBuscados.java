@@ -30,8 +30,7 @@ public class JugadoresBuscados extends Activity {
 		String consultaString = extras.getString("consulta");
 		consulta = consultaString;
 		ArrayList<UsuarioEntrada> usuariosCercanos = new ArrayList<UsuarioEntrada>();
-		ThreadUsuariosCercanos tuc = new ThreadUsuariosCercanos(
-				Login.nombreUsuario);
+		ThreadUsuariosCercanos tuc = new ThreadUsuariosCercanos();
 		try {
 			tuc.start();
 			tuc.join();
@@ -98,17 +97,17 @@ public class JugadoresBuscados extends Activity {
 
 	// Hilo que busca los jugadores mas cercanos del usuario
 	public class ThreadUsuariosCercanos extends Thread {
-
-		String modalidadJugada = "";
+		
 		String nombre = "";
+		String modalidadJugada = "";
+		String provincia = "";
+		String distancia = "";
+		int imgPerfil = 0;
+		Double dist = 0.0;
+
 		ArrayList<UsuarioEntrada> usuarios = new ArrayList<UsuarioEntrada>();
 		// Variable que controla el número de usuarios mostrados
 		int numeroResultados = 20;
-
-		// Se le pasa el nombre del usuario logeado
-		public ThreadUsuariosCercanos(String nombre) {
-			this.nombre = nombre;
-		}
 
 		@Override
 		public void run() {
@@ -133,7 +132,7 @@ public class JugadoresBuscados extends Activity {
 				Statement stat = conn.createStatement();
 				ResultSet rs = stat
 						.executeQuery("SELECT latitud,longitud from Usuario where nombreU='"
-								+ nombre + "';");
+								+ Login.nombreUsuario + "';");
 				while (rs.next()) {
 					latitud = rs.getString("latitud");
 					longitud = rs.getString("longitud");
@@ -153,12 +152,12 @@ public class JugadoresBuscados extends Activity {
 
 				// Se obtienen los datos
 				while (rs.next()) {
-					String nombre = rs.getString("nombreU");
+					nombre = rs.getString("nombreU");
 					modalidadJugada = rs.getString("modalidadJugada");
-					String provincia = rs.getString("provincia");
-					String distancia = rs.getString("distancia");
-					int imgPerfil = rs.getInt("imgPerfil");
-					Double dist = Double.parseDouble(distancia)
+					provincia = rs.getString("provincia");
+					distancia = rs.getString("distancia");
+					imgPerfil = rs.getInt("imgPerfil");
+					dist = Double.parseDouble(distancia)
 							* LocalizadorGPS.metrosXGrado;
 					// Si la distancia es menor que 1 o mayor de 500km se trata.
 					if (dist < 1) {

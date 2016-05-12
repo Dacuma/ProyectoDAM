@@ -7,76 +7,90 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bgaltatorneo"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="22dp" >
-        
-         <TextView
+
+        <TextView
             android:id="@+id/tvATnTorneo"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="NOMBRE DEL TORNEO"
-            android:textSize="22sp" />
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Nombre Del Torneo"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/etATnTorneo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:ems="10"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/tvATProvincia"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="PROVINCIA"
-            android:textSize="22sp" />
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Provincia"
+            android:textColor="#FFFFFF" />
 
         <Spinner
             android:id="@+id/spnProvinciasAT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:entries="@array/provincias" />
 
         <TextView
             android:id="@+id/tvATCiudad"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="CIUDAD"
-            android:textSize="22sp" />
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Ciudad"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/etATCiudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center" >
-
-            <requestFocus />
+            android:background="#80FFFFFF"
+            android:ems="10" >
         </EditText>
 
         <TextView
             android:id="@+id/tvATFecha"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="FECHA"
-            android:textSize="22sp" />
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Fecha"
+            android:textColor="#FFFFFF" />
 
         <DatePicker
             android:id="@+id/dpATFecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
+            android:calendarViewShown="false" />
 
         <TextView
             android:id="@+id/tvATHora"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="HORA"
-            android:textSize="22sp" />
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Hora"
+            android:textColor="#FFFFFF" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:gravity="center" >
 
             <EditText
@@ -84,15 +98,15 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center"
+                android:gravity="center|right"
                 android:inputType="number"
                 android:maxLength="2" />
 
             <TextView
                 android:id="@+id/tvATDosPuntos"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:gravity="center"
                 android:text=":" />
 
             <EditText
@@ -100,21 +114,24 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:gravity="center"
+                android:gravity="center|left"
                 android:inputType="number"
                 android:maxLength="2" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tvATPrecio"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="PRECIO"
-            android:textSize="22sp" />
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Precio"
+            android:textColor="#FFFFFF" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:gravity="center"
             android:orientation="horizontal" >
 
@@ -130,39 +147,47 @@
             <TextView
                 android:id="@+id/tvATEuro"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:paddingRight="10sp"
                 android:text="€" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tvATFormato"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="FORMATO"
-            android:textSize="22sp" />
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Formato"
+            android:textColor="#FFFFFF" />
 
         <Spinner
             android:id="@+id/spnFormatoAT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#80FFFFFF"
             android:entries="@array/formatos" />
 
         <TextView
             android:id="@+id/tvATDescripcion"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="DESCRIPCIÓN"
-            android:textSize="22sp" 
-            android:maxLength="250"/>
+            android:background="#80980000"
+            android:gravity="center"
+            android:text="Descripción"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/etATDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.22"
+            android:background="#80FFFFFF"
             android:ems="10"
             android:gravity="center_horizontal"
-            android:lines="4" />
+            android:lines="4"
+            android:maxLength="250" />
 
         <TableLayout
             android:id="@+id/TableLayout1"
@@ -172,7 +197,7 @@
             android:paddingTop="12sp"
             android:stretchColumns="*" >
 
-           <TableRow
+            <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
@@ -182,16 +207,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="volverAT"
-                    android:text="Volver" />
+                    android:text="Volver"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/btnAltaAT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="altaTorneo"
-                    android:text="Alta" />
-             </TableRow>
-
+                    android:text="Alta Torneo"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
         </TableLayout>
     </LinearLayout>
 

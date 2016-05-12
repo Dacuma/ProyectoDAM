@@ -43,7 +43,7 @@ public class VistaTorneo extends Activity {
 			e.printStackTrace();
 		}
 
-		inscritosIniciales = Integer.parseInt(tvt.getDatos().get(9));
+		inscritosIniciales = /*Integer.parseInt(tvt.getDatos().get(9))*/ 0;
 		inscritosActuales = inscritosIniciales;
 
 		if (estaInscrito) {
@@ -182,7 +182,7 @@ public class VistaTorneo extends Activity {
 					if (rs.getString("descripcion").length() == 0) {
 						descripcion = "No hay descripción.";
 					} else {
-						descripcion = rs.getString("descripción");
+						descripcion = rs.getString("descripcion");
 					}
 					datos.add(descripcion);
 				}

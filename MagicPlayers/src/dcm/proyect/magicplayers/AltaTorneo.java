@@ -134,7 +134,7 @@ public class AltaTorneo extends Activity {
 			}
 			idTorneo++;
 			Toast.makeText(this, "El Torneo se ha añadido con éxito!",
-					Toast.LENGTH_SHORT).show();
+					Toast.LENGTH_LONG).show();
 			Intent i = new Intent(this, MenuPrincipal.class);
 			startActivity(i);
 		}

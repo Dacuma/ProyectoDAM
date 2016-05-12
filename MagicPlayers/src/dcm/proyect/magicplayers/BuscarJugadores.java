@@ -22,13 +22,9 @@ public class BuscarJugadores extends Activity {
 	}
 
 	public void lanzarBuscarUsuarios(View v) {
-		String consulta = "where nombreU != '"+Login.nombreUsuario+"' ";
+		String consulta = "where nombreU != '" + Login.nombreUsuario + "' ";
 		boolean bandera = true;
-		EditText et1 = (EditText) findViewById(R.id.etNombreBJ);
-		if (et1.getText().toString().length() > 0) {
-			consulta = consulta + "and nombreU LIKE '%" + et1.getText().toString()
-					+ "%' ";
-		}
+		
 		// Pais
 		CheckBox cb1 = (CheckBox) findViewById(R.id.cbBuscarPais);
 		if (cb1.isChecked()) {
@@ -101,6 +97,13 @@ public class BuscarJugadores extends Activity {
 		if (cb12.isChecked()) {
 			consulta = consulta + "and modalidadJugada LIKE '%7%'";
 		}
+		
+		//NombreU
+		EditText et1 = (EditText) findViewById(R.id.etNombreBJ);
+		if (et1.getText().toString().length() > 0) {
+			consulta = consulta + "and nombreU LIKE '%"
+					+ et1.getText().toString() + "%' ";
+		}
 
 		// Distancia
 		CheckBox cb3 = (CheckBox) findViewById(R.id.cbMayorQueBJ);
@@ -113,11 +116,12 @@ public class BuscarJugadores extends Activity {
 			if (cb4.isChecked() && menorQue.getText().toString().length() > 0) {
 				consulta = consulta + "and distancia*100 <"
 						+ menorQue.getText().toString() + " ";
-			} else if (cb4.isChecked()
-					&& menorQue.getText().toString().length() > 0) {
-				consulta = consulta + "having distancia*100 <"
-						+ menorQue.getText().toString() + " ";
 			}
+		} else if (cb4.isChecked()
+				&& menorQue.getText().toString().length() > 0) {
+			consulta = consulta + "having distancia*100 <"
+					+ menorQue.getText().toString() + " ";
+
 		}
 		if (bandera) {
 			Intent i = new Intent(this, JugadoresBuscados.class);
