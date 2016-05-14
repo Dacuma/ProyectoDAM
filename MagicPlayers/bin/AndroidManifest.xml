@@ -62,6 +62,7 @@
         <activity android:label="Enviar Mensaje" android:name="EnviarMensaje" android:screenOrientation="portrait"></activity>
         <activity android:label="Mensajes" android:name="CentroDeMensajes" android:screenOrientation="portrait"></activity>
         <activity android:label="Mensaje" android:name="VistaMensaje" android:screenOrientation="portrait"></activity>
+        <activity android:name="VerPerfil" android:label="Mi Perfil" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
     </application>
 
 </manifest>

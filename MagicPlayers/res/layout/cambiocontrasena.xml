@@ -13,7 +13,7 @@
             android:id="@+id/tvPassVieja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contraseña Actual" />
+            android:text="@string/contrasenaactual" />
 
         <EditText
             android:id="@+id/etPassVieja"
@@ -29,7 +29,7 @@
             android:id="@+id/tvPassNueva1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contraseña Nueva" />
+            android:text="@string/contrasenanueva" />
 
         <EditText
             android:id="@+id/etPassNueva1"
@@ -42,7 +42,7 @@
             android:id="@+id/tvPassNueva2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Repite Contraseña" />
+            android:text="@string/repitecontrasena" />
 
         <EditText
             android:id="@+id/etPassNueva2"
@@ -61,14 +61,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="lanzarVolver"
-                android:text="Volver" />
+                android:text="@string/volver" />
 
             <Button
                 android:id="@+id/btnGuardarCP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="metodoGuardar"
-                android:text="Guardar" />
+                android:text="@string/guardar" />
 
         </LinearLayout>
 

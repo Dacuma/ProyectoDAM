@@ -8,8 +8,70 @@
     <string name="login">Identificarse</string>
     <string name="signin">Registrarse</string>
     <string name="LOGIN">LOGIN</string>
-    
-    
+    <string name="nombredeltorneo">Nombre Del Torneo</string>
+    <string name="provincia">Provincia</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="dospuntos">:</string>
+    <string name="precio">Precio</string>
+    <string name="simboloeuro">€</string>
+    <string name="formato">Formato</string>
+    <string name="descripcion">Descripción</string>
+    <string name="volver">Volver</string>
+    <string name="altatorneo">Alta Torneo</string>
+    <string name="nombreusuario">Nombre De Usuario</string>
+    <string name="pais">País</string>
+    <string name="buscarpais">Buscar país</string>
+    <string name="buscarprovincia">Buscar Provincia</string>
+    <string name="codigopostal">Código Postal</string>
+    <string name="distancia">Distancia</string>
+    <string name="mayorque">Mayor que </string>
+    <string name="menorque">Menor que </string>
+    <string name="km"> Km</string>
+    <string name="formatosjugados">Formatos Jugados</string>
+    <string name="vintage">Vintage</string>
+    <string name="legacy">Legacy</string>
+    <string name="modern">Modern</string>
+    <string name="standard">Standard</string>
+    <string name="pauper">Pauper</string>
+    <string name="commander">Commander</string>
+    <string name="casual">Casual</string>
+    <string name="otros">Otros</string>
+    <string name="buscar">Buscar</string>
+    <string name="buscarfecha">Buscar Por Fecha</string>
+    <string name="buscarformato">Buscar Por Formato</string>
+    <string name="guardar">Guardar</string>
+    <string name="contrasenaactual">Contraseña Actual</string>
+    <string name="contrasenanueva">Contraseña Nueva</string>
+    <string name="repitecontrasena">Repite Contraseña</string>
+    <string name="nomensajessinleer">No tienes ningún mensaje sin leer.</string>
+    <string name="nomensajesleidos">No tienes ningún mensaje leido.</string>
+    <string name="cambiarcontrasena">Cambiar Contraseña</string>
+    <string name="cambiaravatar">Cambiar Avatar</string>
+    <string name="email">Email</string>
+    <string name="numerodci">Número DCI</string>
+    <string name="colorfavorito">Color Favorito</string>
+    <string name="rojo">Rojo</string>
+    <string name="verde">Verde</string>
+    <string name="azul">Azul</string>
+    <string name="negro">Negro</string>
+    <string name="blanco">Blanco</string>
+    <string name="incoloro">Incoloro</string>
+    <string name="de">De: </string>
+    <string name="para">Para: </string>
+    <string name="asunto">Asunto:</string>
+    <string name="mensaje">Mensaje:</string>
+    <string name="enviar">Enviar</string>
+    <string name="jugadorescercanos">Jugadores\nCercanos</string>
+    <string name="buscarjugadores">Buscar\nJugadores</string>
+    <string name="buscartorneos">Buscar\nTorneos</string>
+    <string name="altatorneomenu">Alta\nTorneo</string>
+    <string name="centrodemensajes">Centro de\nMensajes</string>
+    <string name="configurarperfil">Configurar\nPerfil</string>
+    <string name="verperfil">Ver Perfil</string>
+
+
     <string-array name="formatos">
         <item>Vintage</item>
         <item>Legacy</item>
@@ -20,11 +82,9 @@
         <item>Casula</item>
         <item>Otros</item>
     </string-array>
-
     <string-array name="paises">
         <item>España</item>
     </string-array>
-   
     <string-array name="provincias">
         <item>A Coruña</item>
         <item>Alava</item>

@@ -9,9 +9,11 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 //Clase que muestra los datos de un usuario concreto.
@@ -46,13 +48,13 @@ public class VistaUsuario extends Activity{
 		//FORMATOS JUGADOS
 		TextView tv2 = (TextView) findViewById(R.id.tvFormatos);
 		tv2.setText(stringFormatosJugados(tvu.getDatos().get(3)));
-		
 		if(nombreU.equals(Login.nombreUsuario)){
 			ImageView img = (ImageView)findViewById(R.id.imgEnviarMensaje);
 			img.setVisibility(View.INVISIBLE);
 			
 		}
 	}
+
 	
 	// Método para rellenar formatos jugados
 			public String stringFormatosJugados(String fj) {
@@ -145,7 +147,8 @@ public class VistaUsuario extends Activity{
 						datos.add(dato);
 						dato = String.valueOf(rs.getInt("modalidadJugada"));
 						datos.add(dato);
-
+						dato = String.valueOf(rs.getInt("colorFav"));
+						datos.add(dato);
 					}
 
 				} catch (SQLException e) {

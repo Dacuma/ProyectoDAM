@@ -53,8 +53,7 @@
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:ems="10"
-            android:inputType="text"
-            android:text="DCuellar" />
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/tvPassword"
@@ -75,8 +74,7 @@
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:ems="10"
-            android:inputType="textPassword"
-            android:text="qwerty" />
+            android:inputType="textPassword" />
 
         <TableLayout
             android:layout_width="match_parent"

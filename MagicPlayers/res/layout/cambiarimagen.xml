@@ -157,28 +157,35 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:gravity="center" >
+            android:stretchColumns="*" 
+            android:padding="12sp">
 
-            <Button
-                android:id="@+id/btnVolver"
+            <TableRow
+                android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="volverConfPerfil"
-                android:text="Volver"
-                android:textColor="#FFFFFF" />
+                android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/btnGuardar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="guardarImagenBBDD"
-                android:text="Guardar"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="volverConfPerfil"
+                    android:text="@string/volver"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="guardarImagenBBDD"
+                    android:text="@string/guardar"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+        </TableLayout>
+
     </LinearLayout>
 
 </ScrollView>

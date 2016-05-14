@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical" 
+        android:background="@drawable/bgvistatorneo">
 
         <LinearLayout
             android:id="@+id/LinearLayout1"
@@ -20,11 +21,13 @@
 
             <TextView
                 android:id="@+id/tvNombreTorneoVT"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:background="#80980000"
+                android:gravity="center"
                 android:text="TextView"
                 android:textColor="#FFFFFF"
-                android:textSize="34sp" />
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -90,20 +93,38 @@
                 android:textColor="#FFFFFF" />
 
             <TextView
-                android:id="@+id/tvDescripcionVT"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="22sp"
+                android:text="Descripción:"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvDescripcionVT"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#40FFFFFF"
+                android:lines="7"
                 android:text="Medium Text"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/tvInscritosVT"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:gravity="right"
                 android:text="Medium Text"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </LinearLayout>
+
         </LinearLayout>
 
         <TableLayout
@@ -131,7 +152,6 @@
                     android:onClick="inscribirTorneo"
                     android:text="Inscribirse"
                     android:textColor="#FFFFFF" />
-
             </TableRow>
 
             <TableRow

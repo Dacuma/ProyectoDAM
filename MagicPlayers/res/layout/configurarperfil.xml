@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="lanzarCambiarPass"
-            android:text="Cambiar Contraseña"
+            android:text="@string/cambiarcontrasena"
             android:textColor="#FFFFFF" />
 
         <Button
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="cambiarImagenPerfil"
-            android:text="Cambiar Avatar"
+            android:text="@string/cambiaravatar"
             android:textColor="#FFFFFF" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Formatos Jugados"
+            android:text="@string/formatosjugados"
             android:textColor="#FFFFFF" />
 
         <TableLayout
@@ -53,16 +53,15 @@
                     style="Widget.Holo.CompoundButton.CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vintage"
+                    android:text="@string/vintage"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbLegacy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Legacy"
+                    android:text="@string/legacy"
                     android:textColor="#000000" />
-
             </TableRow>
 
             <TableRow
@@ -74,16 +73,15 @@
                     android:id="@+id/cbModern"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Modern"
+                    android:text="@string/modern"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbStandard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Standard"
+                    android:text="@string/standard"
                     android:textColor="#000000" />
-
             </TableRow>
 
             <TableRow
@@ -95,16 +93,15 @@
                     android:id="@+id/cbPauper"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pauper"
+                    android:text="@string/pauper"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbCommander"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Commander"
+                    android:text="@string/commander"
                     android:textColor="#000000" />
-
             </TableRow>
 
             <TableRow
@@ -116,26 +113,25 @@
                     android:id="@+id/cbCasual"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Casual"
+                    android:text="@string/casual"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbOtros"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Otros"
+                    android:text="@string/otros"
                     android:textColor="#000000" />
-
             </TableRow>
         </TableLayout>
 
         <TextView
             android:id="@+id/tvPais"
-           android:layout_width="fill_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-             android:text="País"
+            android:text="@string/pais"
             android:textColor="#FFFFFF" />
 
         <Spinner
@@ -151,7 +147,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Provincia"
+            android:text="@string/provincia"
             android:textColor="#FFFFFF" />
 
         <Spinner
@@ -167,7 +163,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Código Postal"
+            android:text="@string/codigopostal"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -187,7 +183,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -197,15 +193,15 @@
             android:background="#80FFFFFF"
             android:ems="10"
             android:inputType="textEmailAddress" />
-        
-         <TextView
-             android:id="@+id/tvDCI"
-             android:layout_width="fill_parent"
+
+        <TextView
+            android:id="@+id/tvDCI"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-             android:text="Número DCI"
-             android:textColor="#FFFFFF" />
+            android:text="@string/numerodci"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/etDCI"
@@ -221,64 +217,65 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Color Favorito"
+            android:text="@string/colorfavorito"
             android:textColor="#FFFFFF" />
 
         <RadioGroup
             android:id="@+id/rgColorFav"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:dividerPadding="0dp"
-            android:orientation="vertical" 
             android:background="#80FFFFFF"
-            android:paddingLeft="22sp">
+            android:dividerPadding="0dp"
+            android:orientation="vertical"
+            android:paddingLeft="22sp" >
 
             <RadioButton
                 android:id="@+id/rbRojo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rojo"
+                android:text="@string/rojo"
                 android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/rbVerde"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Verde"
+                android:text="@string/verde"
                 android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/rbBlanco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Blanco"
+                android:text="@string/blanco"
                 android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/rbAzul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Azul"
+                android:text="@string/azul"
                 android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/rbNegro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Negro"
+                android:text="@string/negro"
                 android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/rbIncoloro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Incoloro"
+                android:text="@string/incoloro"
                 android:textColor="#000000" />
         </RadioGroup>
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
             android:stretchColumns="*" >
 
             <TableRow
@@ -291,7 +288,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="volverMenuPrincipal"
-                    android:text="Volver"
+                    android:text="@string/volver"
                     android:textColor="#FFFFFF" />
 
                 <Button
@@ -299,7 +296,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="guardarBBDD"
-                    android:text="Guardar"
+                    android:text="@string/guardar"
                     android:textColor="#FFFFFF" />
             </TableRow>
         </TableLayout>
@@ -308,10 +305,10 @@
             android:id="@+id/btnEliminarCuentaCF"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
             android:onClick="eliminarCuenta"
             android:text="Eliminar Cuenta"
             android:textColor="#FFFFFF" />
-
     </LinearLayout>
 
 </ScrollView>

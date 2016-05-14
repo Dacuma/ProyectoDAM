@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Nombre De Usuario"
+            android:text="@string/nombreusuario"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Pais"
+            android:text="@string/pais"
             android:textColor="#FFFFFF" />
 
         <CheckBox
@@ -43,13 +43,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#80FFFFFF"
-            android:text="Buscar país" />
+            android:text="@string/buscarpais" />
 
         <Spinner
             android:id="@+id/spnPaisBJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#80FFFFFF"
+            android:background="#AAFFFFFF"
             android:entries="@array/paises" />
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Provincia"
+            android:text="@string/provincia"
             android:textColor="#FFFFFF" />
 
         <CheckBox
@@ -66,13 +66,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#80FFFFFF"
-            android:text="Buscar provincia" />
+            android:text="@string/buscarprovincia" />
 
         <Spinner
             android:id="@+id/spnProvinciaBJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#80FFFFFF"
+            android:background="#AAFFFFFF"
             android:entries="@array/provincias" />
 
         <TextView
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Código Postal"
+            android:text="@string/codigopostal"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Distancia"
+            android:text="@string/distancia"
             android:textColor="#FFFFFF" />
 
         <LinearLayout
@@ -113,7 +113,7 @@
                 android:id="@+id/cbMayorQueBJ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Mayor que " />
+                android:text="@string/mayorque" />
 
             <EditText
                 android:id="@+id/etDistanciaMayorBJ"
@@ -126,7 +126,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Km" />
+                android:text="@string/km" />
         </LinearLayout>
 
         <LinearLayout
@@ -141,7 +141,7 @@
                 android:id="@+id/cbMenorQueBJ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Menor que " />
+                android:text="@string/menorque" />
 
             <EditText
                 android:id="@+id/etDistanciaMenorBJ"
@@ -151,10 +151,10 @@
                 android:maxLength="4" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Km" />
+                android:text="@string/km"/>
         </LinearLayout>
 
         <TextView
@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Formatos Jugados"
+            android:text="@string/formatosjugados"
             android:textColor="#FFFFFF" />
 
         <TableLayout
@@ -182,14 +182,14 @@
                     style="Widget.Holo.CompoundButton.CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vintage"
+                    android:text="@string/vintage"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbLegacyBJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Legacy"
+                    android:text="@string/legacy"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -202,14 +202,14 @@
                     android:id="@+id/cbModernBJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Modern"
+                    android:text="@string/modern"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbStandardBJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Standard"
+                    android:text="@string/standard"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -222,14 +222,14 @@
                     android:id="@+id/cbPauperBJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pauper"
+                    android:text="@string/pauper"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbCommanderBJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Commander"
+                    android:text="@string/commander"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -242,14 +242,14 @@
                     android:id="@+id/cbCasualBJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Casual"
+                    android:text="@string/casual"
                     android:textColor="#000000" />
 
                 <CheckBox
                     android:id="@+id/cbOtrosBJ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Otros"
+                    android:text="@string/otros"
                     android:textColor="#000000" />
             </TableRow>
         </TableLayout>
@@ -271,7 +271,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="lanzarVolverMP"
-                    android:text="Volver"
+                    android:text="@string/volver"
                     android:textColor="#FFFFFF" />
 
                 <Button
@@ -279,7 +279,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="lanzarBuscarUsuarios"
-                    android:text="Buscar"
+                    android:text="@string/buscar"
                     android:textColor="#FFFFFF" />
 
             </TableRow>

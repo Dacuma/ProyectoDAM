@@ -59,7 +59,7 @@
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Jugadores\nCercanos"
+                    android:text="@string/jugadorescercanos"
                     android:textColor="#FFFFFF" />
 
                 <TextView
@@ -70,7 +70,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Buscar\nJugadores"
+                    android:text="@string/buscarjugadores"
                     android:textColor="#FFFFFF" />
             </TableRow>
 
@@ -112,7 +112,7 @@
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Buscar\nTorneos"
+                    android:text="@string/buscartorneos"
                     android:textColor="#FFFFFF" />
 
                 <TextView
@@ -123,7 +123,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Alta\nTorneo"
+                    android:text="@string/altatorneomenu"
                     android:textColor="#FFFFFF" />
             </TableRow>
 
@@ -165,7 +165,7 @@
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Centro de\nMensajes"
+                    android:text="@string/centrodemensajes"
                     android:textColor="#FFFFFF" />
 
                 <TextView
@@ -176,7 +176,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Configurar\nPerfil"
+                    android:text="@string/configurarperfil"
                     android:textColor="#FFFFFF" />
             </TableRow>
         </TableLayout>

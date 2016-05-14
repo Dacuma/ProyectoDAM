@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -46,6 +47,16 @@ public class MenuPrincipal extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		if (id == R.id.ver_perfil) {
+			lanzarVerPerfil(null);
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -90,12 +101,17 @@ public class MenuPrincipal extends Activity {
 		Intent i = new Intent(this, AltaTorneo.class);
 		startActivity(i);
 	}
-	
+
 	public void lanzarCentroDeMensajes(View v) {
 		Intent i = new Intent(this, CentroDeMensajes.class);
 		startActivity(i);
 	}
 
+	public void lanzarVerPerfil(View v) {
+		Intent i = new Intent(this, VerPerfil.class);
+		startActivity(i);
+	}
+	
 	public void salirAplicación(View v) {
 		Intent i = new Intent(this, Login.class);
 		startActivity(i);

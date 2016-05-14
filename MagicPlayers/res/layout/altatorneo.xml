@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Nombre Del Torneo"
+            android:text="@string/nombredeltorneo"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Provincia"
+            android:text="@string/provincia"
             android:textColor="#FFFFFF" />
 
         <Spinner
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Ciudad"
+            android:text="@string/ciudad"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Fecha"
+            android:text="@string/fecha"
             android:textColor="#FFFFFF" />
 
         <DatePicker
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Hora"
+            android:text="@string/hora"
             android:textColor="#FFFFFF" />
 
         <LinearLayout
@@ -107,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center"
-                android:text=":" />
+                android:text="@string/dospuntos" />
 
             <EditText
                 android:id="@+id/etATMinutos"
@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Precio"
+            android:text="@string/precio"
             android:textColor="#FFFFFF" />
 
         <LinearLayout
@@ -150,7 +150,7 @@
                 android:layout_height="fill_parent"
                 android:gravity="center"
                 android:paddingRight="10sp"
-                android:text="€" />
+                android:text="@string/simboloeuro" />
         </LinearLayout>
 
         <TextView
@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Formato"
+            android:text="@string/formato"
             android:textColor="#FFFFFF" />
 
         <Spinner
@@ -175,13 +175,14 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="Descripción"
+            android:text="@string/descripcion"
             android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/etATDescripcion"
+            android:inputType="text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dip"
             android:layout_weight="1.22"
             android:background="#80FFFFFF"
             android:ems="10"
@@ -207,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="volverAT"
-                    android:text="Volver"
+                    android:text="@string/volver"
                     android:textColor="#FFFFFF" />
 
                 <Button
@@ -215,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="altaTorneo"
-                    android:text="Alta Torneo"
+                    android:text="@string/altatorneo"
                     android:textColor="#FFFFFF" />
             </TableRow>
         </TableLayout>

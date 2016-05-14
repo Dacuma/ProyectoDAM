@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="NOMBRE DEL TORNEO"
+            android:text="@string/nombredeltorneo"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="PROVINCIA"
+            android:text="@string/provincia"
             android:textColor="#FFFFFF" />
 
         <CheckBox
@@ -43,13 +43,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#80FFFFFF"
-            android:text="Buscar provincia" />
+            android:text="@string/buscarprovincia" />
 
         <Spinner
             android:id="@+id/spnProvinciaBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#80FFFFFF"
+            android:background="#AAFFFFFF"
             android:entries="@array/provincias" />
 
         <TextView
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="FECHA"
+            android:text="@string/fecha"
             android:textColor="#FFFFFF" />
 
         <CheckBox
@@ -66,7 +66,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#80FFFFFF"
-            android:text="Buscar por fecha" />
+            android:text="@string/buscarfecha" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="PRECIO"
+            android:text="@string/precio"
             android:textColor="#FFFFFF" />
 
         <LinearLayout
@@ -102,7 +102,7 @@
                 android:id="@+id/cbMayorQueBT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Mayor que " />
+                android:text="@string/mayorque" />
 
             <EditText
                 android:id="@+id/etPrecioMayorBT"
@@ -115,7 +115,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" €" />
+                android:text="@string/simboloeuro"/>
         </LinearLayout>
 
         <LinearLayout
@@ -130,7 +130,7 @@
                 android:id="@+id/cbMenorQueBT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Menor que " />
+                android:text="@string/menorque" />
 
             <EditText
                 android:id="@+id/etPrecioMenorBT"
@@ -140,10 +140,10 @@
                 android:maxLength="4" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" €" />
+                android:text="@string/simboloeuro" />
         </LinearLayout>
 
         <TextView
@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:background="#80980000"
             android:gravity="center"
-            android:text="FORMATOS JUGADOS"
+            android:text="@string/formatosjugados"
             android:textColor="#FFFFFF" />
 
         <CheckBox
@@ -160,13 +160,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#80FFFFFF"
-            android:text="Buscar por formato" />
+            android:text="@string/buscarformato" />
 
         <Spinner
             android:id="@+id/spnFormatoBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#80FFFFFF"
+            android:background="#AAFFFFFF"
             android:entries="@array/formatos" />
 
         <TableLayout
@@ -185,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="lanzarVolverMP"
-                    android:text="Volver"
+                    android:text="@string/volver"
                     android:textColor="#FFFFFF" />
 
                 <Button
@@ -193,7 +193,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="lanzarBuscarTorneos"
-                    android:text="Buscar"
+                    android:text="@string/buscar"
                     android:textColor="#FFFFFF" />
             </TableRow>
         </TableLayout>

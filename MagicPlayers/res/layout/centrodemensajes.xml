@@ -22,7 +22,8 @@
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:background="@drawable/bgmensajes" >
 
                 <LinearLayout
                     android:id="@+id/tab1"
@@ -39,7 +40,10 @@
                             android:id="@android:id/empty"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="No tienes ningún mensaje sin leer." />
+                            android:text="@string/nomensajessinleer"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" 
+                            android:padding="12sp"/>
 
                         <ListView
                             android:id="@+id/lvMensajesNoLeidos"
@@ -64,7 +68,10 @@
                             android:id="@android:id/empty"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="No tienes ningún mensaje leido." />
+                            android:text="@string/nomensajesleidos"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" 
+                            android:padding="12sp"/>
 
                         <ListView
                             android:id="@+id/lvMensajesLeidos"
