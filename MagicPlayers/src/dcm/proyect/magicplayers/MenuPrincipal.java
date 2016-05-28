@@ -23,6 +23,8 @@ public class MenuPrincipal extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		getActionBar().setTitle("Bienvenido " + Login.nombreUsuario + "!");
 		setContentView(R.layout.menuprincipal);
 		// Cada vez que se accede por primera vez a la aplicación se guardan las
 		// coordenadas en la base de datos.
@@ -55,7 +57,7 @@ public class MenuPrincipal extends Activity {
 		if (id == R.id.ver_perfil) {
 			lanzarVerPerfil(null);
 		}
-		
+
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -111,7 +113,7 @@ public class MenuPrincipal extends Activity {
 		Intent i = new Intent(this, VerPerfil.class);
 		startActivity(i);
 	}
-	
+
 	public void salirAplicación(View v) {
 		Intent i = new Intent(this, Login.class);
 		startActivity(i);

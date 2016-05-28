@@ -44,7 +44,8 @@
               android:ems="10"
               android:gravity="top"
               android:lines="1"
-              android:maxLength="15" />
+              android:maxLength="15"
+              android:paddingLeft="5sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -64,7 +65,8 @@
             android:ems="10"
             android:gravity="top"
             android:lines="9"
-            android:maxLength="999" />
+            android:maxLength="999"
+            android:padding="5sp" />
 
         <TableLayout
             android:layout_width="match_parent"

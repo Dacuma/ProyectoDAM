@@ -130,7 +130,9 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stretchColumns="*" >
+            android:stretchColumns="*" 
+            android:layout_marginBottom="16sp"
+            android:padding="4sp">
 
             <TableRow
                 android:id="@+id/tableRow1"

@@ -45,8 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Texto del mensaje..."
-            android:background="#FFFFFF"
-            android:lines="9"
+            android:background="#AAFFFFFF"
+            android:lines="13"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#000000"
  />

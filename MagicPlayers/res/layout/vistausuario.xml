@@ -9,9 +9,11 @@
         android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bgperfiljugadores"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingTop="12dp" >
+        android:paddingTop="12dp" 
+        android:paddingBottom="50sp">
 
         <ImageView
             android:id="@+id/imageView_imagen"
@@ -25,7 +27,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:background="#343434"
+            android:background="#AA343434"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -90,7 +92,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#343434"
+            android:background="#AA343434"
             android:gravity="center_horizontal"
             android:orientation="vertical" >
 

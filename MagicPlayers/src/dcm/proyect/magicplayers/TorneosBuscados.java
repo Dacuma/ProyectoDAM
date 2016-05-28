@@ -106,8 +106,6 @@ public class TorneosBuscados  extends Activity {
 		@Override
 		public void run() {
 			Connection conn = null;
-			String latitud = "";
-			String longitud = "";
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(

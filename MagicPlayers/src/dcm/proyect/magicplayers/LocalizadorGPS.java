@@ -121,9 +121,8 @@ public class LocalizadorGPS implements LocationListener {
 			Connection conn = null;
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				conn = DriverManager.getConnection(
-						"jdbc:mysql://db4free.net:3306/magicplayers",
-						"dcuellar", "QAZwsx123");
+				conn = DriverManager.getConnection(ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
 			} catch (SQLException se) {
 
 			} catch (ClassNotFoundException e) {

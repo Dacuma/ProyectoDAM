@@ -43,7 +43,7 @@ public class VistaTorneo extends Activity {
 			e.printStackTrace();
 		}
 
-		inscritosIniciales = /*Integer.parseInt(tvt.getDatos().get(9))*/ 0;
+		inscritosIniciales = Integer.parseInt(tvt.getDatos().get(9));
 		inscritosActuales = inscritosIniciales;
 
 		if (estaInscrito) {
@@ -154,8 +154,8 @@ public class VistaTorneo extends Activity {
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(
-						"jdbc:mysql://db4free.net:3306/magicplayers",
-						"dcuellar", "QAZwsx123");
+						ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
 			} catch (SQLException se) {
 
 			} catch (ClassNotFoundException e) {
@@ -231,8 +231,8 @@ public class VistaTorneo extends Activity {
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
 				conn = DriverManager.getConnection(
-						"jdbc:mysql://db4free.net:3306/magicplayers",
-						"dcuellar", "QAZwsx123");
+						ConexionesDB.serverDB,
+						ConexionesDB.usuarioDB, ConexionesDB.passDB);
 			} catch (SQLException se) {
 
 			} catch (ClassNotFoundException e) {

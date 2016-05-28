@@ -57,7 +57,7 @@
         <activity android:name="AltaTorneo" android:label="Alta Torneo"  android:screenOrientation="portrait"></activity>
         <activity android:name="TorneosBuscados" android:label="Lista de Torneos" android:screenOrientation="portrait"></activity>
         <activity android:name="BuscarTorneos" android:label="Buscar Torneos"  android:screenOrientation="portrait"></activity>
-        <activity android:name="VistaTorneo" android:label="Datos del torneo" android:screenOrientation="portrait"></activity>
+        <activity android:name="VistaTorneo" android:label="Datos del Torneo" android:screenOrientation="portrait"></activity>
         <activity android:label="Jugadores Inscritos" android:name="MostrarJugadoresTorneo" android:screenOrientation="portrait"></activity>
         <activity android:label="Enviar Mensaje" android:name="EnviarMensaje" android:screenOrientation="portrait"></activity>
         <activity android:label="Mensajes" android:name="CentroDeMensajes" android:screenOrientation="portrait"></activity>
