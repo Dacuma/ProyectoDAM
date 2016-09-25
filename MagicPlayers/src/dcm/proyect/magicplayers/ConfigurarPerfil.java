@@ -67,6 +67,12 @@ public class ConfigurarPerfil extends Activity {
 		rellenarColorFavorito(colorFav);
 
 	}
+	
+	@Override
+	public void onBackPressed() {
+		Intent i = new Intent(this, MenuPrincipal.class);
+		startActivity(i);
+	}
 
 	public void volverMenuPrincipal(View v) {
 		Intent i = new Intent(this, MenuPrincipal.class);

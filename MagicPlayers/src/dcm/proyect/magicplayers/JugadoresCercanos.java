@@ -161,7 +161,7 @@ public class JugadoresCercanos extends Activity {
 					if (dist < 1) {
 						distancia = "<1 Km";
 					} else if (dist > 500) {
-						distancia = ">500Km";
+						distancia = ">500 Km";
 					} else {
 						distancia = dist.intValue() + " Km";
 					}
